@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewOrderSummaryActivity">
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="116dp"
+        android:layout_height="59dp"
+        android:text="店名"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="178dp"
+        android:layout_height="31dp"
+        android:text="商品名"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="124dp" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="182dp"
+        android:layout_height="21dp"
+        android:text="¥850"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="155dp" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="183dp"
+        android:layout_height="32dp"
+        android:text="商品名"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="183dp"
+        android:layout_height="21dp"
+        android:text="¥350"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="137dp" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <View
+        android:id="@+id/divider18"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="メモの追加"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="312dp" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="14dp"
+        android:layout_height="17dp"
+        android:text="→"
+        tools:layout_editor_absoluteX="341dp"
+        tools:layout_editor_absoluteY="312dp" />
+
+    <View
+        android:id="@+id/divider19"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="598dp" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="小計"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="625dp" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="107dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="4dp"
+        android:text="￥1130"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="625dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
