@@ -18,11 +18,9 @@
 
     <Button
         android:id="@+id/btn_continue"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
         android:text="@string/continueButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,9 +104,8 @@
         android:id="@+id/countyphone"
         android:layout_width="60dp"
         android:layout_height="30dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_phone_number_prompt"
         app:layout_constraintTop_toBottomOf="@+id/txt_phone_number_prompt"
         app:srcCompat="@drawable/japanflag" />
 

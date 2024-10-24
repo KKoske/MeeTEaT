@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantMenuListActivity">
+    tools:context=".HomeScreenActivity">
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="401dp"
-        android:layout_height="42dp"
-        android:text="ドミノピザ　三条店"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="117dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <View
+        <TextView
+            android:id="@+id/restaurantName"
+            android:layout_width="401dp"
+            android:layout_height="42dp"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="ドミノピザ　三条店"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_picture" />
+
+        <View
         android:id="@+id/divider7"
         android:layout_width="409dp"
         android:layout_height="1dp"
@@ -23,77 +32,32 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="116dp" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="★4.6(300+)"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="159dp" />
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:text="★4.6(300+)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantName" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10:00~5:00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.647"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="159dp" />
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00~5:00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/restaurantName" />
 
-    <View
-        android:id="@+id/divider11"
+        <View
+        android:id="@+id/divider9"
         android:layout_width="409dp"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="115dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img_restaurant_Yoshinoya"
-        tools:layout_editor_absoluteY="560dp" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品名"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="640dp" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="115dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img_restaurant_Yoshinoya"
-        tools:layout_editor_absoluteY="370dp" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品名"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="450dp" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="100dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="28dp"
-        android:text="詳細"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="468dp" />
+        tools:layout_editor_absoluteY="297dp" />
 
     <View
         android:id="@+id/divider8"
@@ -101,15 +65,31 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="205dp" />
+        tools:layout_editor_absoluteY="197dp" />
 
-    <View
-        android:id="@+id/divider9"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="305dp" />
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="マップ"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ルート上店舗"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="平均受取 10分以内"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="259dp" />
 
     <View
         android:id="@+id/divider10"
@@ -119,49 +99,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="206dp" />
+        tools:layout_editor_absoluteY="198dp" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ルート上店舗"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="224dp" />
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="62dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="注目商品"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider10" />
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="平均受取 10分以内"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="267dp" />
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="70dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="オファー"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickUpMenuCard" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="マップ"
-        tools:layout_editor_absoluteX="245dp"
-        tools:layout_editor_absoluteY="238dp" />
+        <ImageView
+            android:id="@+id/home_picture"
+            android:layout_width="409dp"
+            android:layout_height="114dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_dominopizza" />
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注目商品"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="327dp" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="メインディッシュ"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="518dp" />
-
-    <View
+        <View
         android:id="@+id/divider13"
         android:layout_width="409dp"
         android:layout_height="1dp"
@@ -170,42 +141,344 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="547dp" />
 
-    <View
-        android:id="@+id/divider12"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="500dp" />
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="セット"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="33dp" />
 
-    <View
-        android:id="@+id/divider14"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        tools:layout_editor_absoluteX="-6dp"
-        tools:layout_editor_absoluteY="676dp" />
+        <view
+            class="android.widget.LinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="3000dp" />
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="店舗画像"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="44dp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pickUpMenuCard"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_width="412dp"
+            android:layout_height="143dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27">
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="411dp"
-        android:layout_height="109dp"
-        android:layout_marginBottom="624dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img_dominopizza" />
+            <HorizontalScrollView
+                android:id="@+id/pickUpMenuScrollView"
+                android:layout_width="428dp"
+                android:layout_height="143dp"
+                android:scrollbars="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/heathy"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:srcCompat="@drawable/img_alba" />
+
+                    <!-- 店舗の名前 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店舗名"
+                        android:textSize="14sp" />
+
+                    <!-- サブ情報（例: 受け取り時間） -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="すぐ受け取り可能"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/offerMenuCard"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_width="412dp"
+            android:layout_height="143dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28">
+
+            <HorizontalScrollView
+                android:id="@+id/offerMenuScrollView"
+                android:layout_width="428dp"
+                android:layout_height="143dp"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="3dp"
+                    tools:layout_editor_absoluteY="549dp">
+
+                    <ImageView
+                        android:id="@+id/heathy"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/img_alba"
+                        tools:layout_editor_absoluteX="15dp"
+                        tools:layout_editor_absoluteY="557dp" />
+
+                    <!-- 店舗の名前 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店舗名"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="41dp"
+                        tools:layout_editor_absoluteY="645dp" />
+
+                    <!-- サブ情報（例: 受け取り時間） -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="すぐ受け取り可能"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="14dp"
+                        tools:layout_editor_absoluteY="666dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setMenuCard"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_width="412dp"
+            android:layout_height="143dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+            <HorizontalScrollView
+                android:id="@+id/setMenuScrollView"
+                android:layout_width="428dp"
+                android:layout_height="143dp"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="742dp">
+
+                    <ImageView
+                        android:id="@+id/heathy"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/img_alba"
+                        tools:layout_editor_absoluteX="12dp"
+                        tools:layout_editor_absoluteY="750dp" />
+
+                    <!-- 店舗の名前 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店舗名"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="38dp"
+                        tools:layout_editor_absoluteY="838dp" />
+
+                    <!-- サブ情報（例: 受け取り時間） -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="すぐ受け取り可能"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="11dp"
+                        tools:layout_editor_absoluteY="859dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/limitedMenuCard"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_width="412dp"
+            android:layout_height="143dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+            <HorizontalScrollView
+                android:id="@+id/limitedMenuScrollView"
+                android:layout_width="428dp"
+                android:layout_height="143dp"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="3dp"
+                    tools:layout_editor_absoluteY="946dp">
+
+                    <ImageView
+                        android:id="@+id/heathy"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/img_alba"
+                        tools:layout_editor_absoluteX="15dp"
+                        tools:layout_editor_absoluteY="954dp" />
+
+                    <!-- 店舗の名前 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店舗名"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="41dp"
+                        tools:layout_editor_absoluteY="1042dp" />
+
+                    <!-- サブ情報（例: 受け取り時間） -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="すぐ受け取り可能"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="14dp"
+                        tools:layout_editor_absoluteY="1062dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ValuePizzaCard"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="4dp"
+            android:layout_width="412dp"
+            android:layout_height="143dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19">
+
+            <HorizontalScrollView
+                android:id="@+id/valuePizzaScrollView"
+                android:layout_width="428dp"
+                android:layout_height="143dp"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="3dp"
+                    tools:layout_editor_absoluteY="1130dp">
+
+                    <ImageView
+                        android:id="@+id/heathy"
+                        android:layout_width="110dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/img_alba"
+                        tools:layout_editor_absoluteX="15dp"
+                        tools:layout_editor_absoluteY="1138dp" />
+
+                    <!-- 店舗の名前 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="店舗名"
+                        android:textSize="14sp"
+                        tools:layout_editor_absoluteX="41dp"
+                        tools:layout_editor_absoluteY="1226dp" />
+
+                    <!-- サブ情報（例: 受け取り時間） -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="すぐ受け取り可能"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="12sp"
+                        tools:layout_editor_absoluteX="14dp"
+                        tools:layout_editor_absoluteY="1246dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="202dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/img_map_home_to_station"
+            tools:layout_editor_absoluteX="182dp"
+            tools:layout_editor_absoluteY="198dp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="セット"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/offerMenuCard" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="期間限定"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setMenuCard" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="バリューピザ"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/limitedMenuCard" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
