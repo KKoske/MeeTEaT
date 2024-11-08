@@ -11,6 +11,72 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_on_route"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_post_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_chinese_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_japanese_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_italian_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_cafe_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_fast_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_healthy_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
         <!-- スクロール用のUIコンポーネントをここより下に配置 -->
 
         <View
@@ -43,452 +109,6 @@
             app:layout_constraintStart_toStartOf="@+id/textView14"
             app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/onRouteCard"
-            card_view:cardCornerRadius="8dp"
-            card_view:cardElevation="4dp"
-            android:layout_width="389dp"
-            android:layout_height="427dp"
-            android:layout_margin="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-            <HorizontalScrollView
-                android:id="@+id/OnRouteScrollView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <GridLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:columnCount="3"
-                        android:padding="8dp"
-                        android:rowCount="3">
-
-                        <!-- 9つのImageViewを配置 -->
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/imageView22"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginTop="8dp"
-                                app:srcCompat="@drawable/img_restaurant_Cocoichi"
-                                tools:layout_editor_absoluteX="283dp"
-                                tools:layout_editor_absoluteY="941dp" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/heathy"
-                                android:layout_width="110dp"
-                                android:layout_height="80dp"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginTop="8dp"
-                                android:layout_marginBottom="8dp"
-                                app:srcCompat="@drawable/img_alba" />
-
-                            <!-- 店舗の名前 -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="店舗名"
-                                android:textSize="14sp" />
-
-                            <!-- サブ情報（例: 受け取り時間） -->
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="すぐ受け取り可能"
-                                android:textColor="@android:color/holo_green_dark"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                    </GridLayout>
-
-                    <!-- 2ページ目 -->
-                    <GridLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:columnCount="3"
-                        android:padding="8dp"
-                        android:rowCount="3">
-
-                    <!-- 次の9つのImageViewを配置 -->
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/heathy"
-                            android:layout_width="110dp"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            app:srcCompat="@drawable/img_alba" />
-
-                        <!-- 店舗の名前 -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="店舗名"
-                            android:textSize="14sp" />
-
-                        <!-- サブ情報（例: 受け取り時間） -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="すぐ受け取り可能"
-                            android:textColor="@android:color/holo_green_dark"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/macdonalds"
-                            android:layout_width="110dp"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            app:srcCompat="@drawable/img_macdonalds"
-                            tools:layout_editor_absoluteX="20dp"
-                            tools:layout_editor_absoluteY="1421dp" />
-
-                        <!-- 店舗の名前 -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="店舗名"
-                            android:textSize="14sp" />
-
-                        <!-- サブ情報（受け取り時間） -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="すぐ受け取り可能"
-                            android:textColor="@android:color/holo_green_dark"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/macdonalds"
-                            android:layout_width="110dp"
-                            android:layout_height="80dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="8dp"
-                            app:srcCompat="@drawable/img_macdonalds"
-                            tools:layout_editor_absoluteX="20dp"
-                            tools:layout_editor_absoluteY="1421dp" />
-
-                        <!-- 店舗の名前 -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="店舗名"
-                            android:textSize="14sp" />
-
-                        <!-- サブ情報（例: 受け取り時間） -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="すぐ受け取り可能"
-                            android:textColor="@android:color/holo_green_dark"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
-
-        </androidx.cardview.widget.CardView>
 
         <View
             android:id="@+id/divider2"
