@@ -1,5 +1,7 @@
 package com.websarva.wings.android.meeteat
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,13 +10,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class HorizontalItemAdapter(private val itemList: List<StoreItem>) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
+
+
+class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
 
     // ビューホルダークラス
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val itemImage: ImageView = view.findViewById(R.id.heathy)
-        val itemName: TextView = view.findViewById(R.id.store_name)
-        val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
+        //val itemImage: ImageView = view.findViewById(R.id.store_image)
+        //val itemName: TextView = view.findViewById(R.id.store_name)
+        //val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
         // 横スクロール画像用RecyclerView
         val recyclerViewImages: RecyclerView = view.findViewById(R.id.recycler_view_images)
     }
@@ -28,17 +32,20 @@ class HorizontalItemAdapter(private val itemList: List<StoreItem>) : RecyclerVie
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // データをビューにバインド
         val currentItem = itemList[position]
-        holder.itemName.text = currentItem.name
-        holder.itemSubInfo.text = currentItem.subInfo
-        holder.itemImage.setImageResource(currentItem.imageResId) // リソースIDから画像を設定
+        if (currentItem.images.isEmpty()) {
+            Log.w("HorizontalItemAdapter", "画像リストが空です: ${currentItem.name}")
+            holder.recyclerViewImages.visibility = View.GONE // 空の場合非表示
+            return
+        }
+
 
         // ImageListAdapter を設定
-        val imageList = currentItem.images  // 各店舗に関連する画像のリスト
-        val imageAdapter = ImageListAdapter(imageList)
+        // 店舗に関連付けられた画像リストを渡す
+        val imageAdapter = ImageListAdapter(currentItem.images)
         holder.recyclerViewImages.adapter = imageAdapter
         holder.recyclerViewImages.layoutManager = LinearLayoutManager(holder.recyclerViewImages.context, LinearLayoutManager.HORIZONTAL, false)
-    }
 
+    }
 
     override fun getItemCount(): Int {
         return itemList.size

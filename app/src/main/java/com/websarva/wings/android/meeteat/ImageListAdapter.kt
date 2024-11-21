@@ -15,11 +15,11 @@ data class ImageItem(
 )
 
 // アダプタークラス
-class ImageListAdapter(private val imageList: List<ImageItem>) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
+class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
 
     // ViewHolderクラス
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val itemImage: ImageView = view.findViewById(R.id.heathy)
+        val itemImage: ImageView = view.findViewById(R.id.store_image)
         val itemName: TextView = view.findViewById(R.id.store_name)
         val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
     }
@@ -31,14 +31,14 @@ class ImageListAdapter(private val imageList: List<ImageItem>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        // データをビューにバインド
-        val currentItem = imageList[position]
-        holder.itemName.text = currentItem.name
-        holder.itemSubInfo.text = currentItem.subInfo
-        holder.itemImage.setImageResource(currentItem.imageResId)
+        val currentImage = storeList[position]
+        holder.itemName.text = currentImage.name
+        holder.itemSubInfo.text = currentImage.subInfo
+        holder.itemImage.setImageResource(currentImage.imageResId)
     }
 
+
     override fun getItemCount(): Int {
-        return imageList.size
+        return storeList.size
     }
 }

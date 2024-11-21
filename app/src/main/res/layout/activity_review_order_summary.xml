@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ReviewOrderSummaryActivity">
 
+    <!--
+
     <View
         android:id="@+id/divider18"
         android:layout_width="409dp"
@@ -192,4 +194,5 @@
         app:layout_constraintTop_toTopOf="@+id/switch2"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
+        -->
 </androidx.constraintlayout.widget.ConstraintLayout>

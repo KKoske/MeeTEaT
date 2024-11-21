@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:srcCompat="@drawable/img_NearestStation" />
+        app:srcCompat="@drawable/img_nearest_station" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/img_home" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/nextButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"

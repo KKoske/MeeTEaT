@@ -2,9 +2,9 @@ package com.websarva.wings.android.meeteat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import layout.AddDatabaseHelper
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var dbHelper: AddDatabaseHelper
@@ -13,74 +13,52 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
+        // データベースから全ての店舗データを取得
         dbHelper = AddDatabaseHelper(this)
-        val stores = dbHelper.getAllStores() //これはデータを取得して使用する例
+        val storeList = dbHelper.getAllStores()
+
+// 各カードに表示する店舗をフィルタリング
+        val onRouteStores = storeList.filter { it.id in listOf(16, 15) }  // カード1用
+        val postOrderStores = storeList.filter { it.id in listOf(14, 13) }  // カード2用
+        val chineseFoodStores = storeList.filter { it.id in listOf(12, 11) }  // カード3用
+// 必要なカードのリストをここに追加
 
 
-        //ルート上カードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_on_route)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        // 2. 各リサイクルビューにアダプターを設定
+        //val recyclerViewMain = findViewById<RecyclerView>(R.id.recycler_view_main)
+        //recyclerViewMain.layoutManager = LinearLayoutManager(this)
+        //recyclerViewMain.adapter = HorizontalItemAdapter(storeList)
 
+        val recyclerViewOnRoute = findViewById<RecyclerView>(R.id.recycler_view_on_route)
+        recyclerViewOnRoute.layoutManager = LinearLayoutManager(this)
+        recyclerViewOnRoute.adapter = HorizontalItemAdapter(onRouteStores)
 
-        //過去の注文カードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_post_order)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewPostOrder = findViewById<RecyclerView>(R.id.recycler_view_post_order)
+        recyclerViewPostOrder.layoutManager = LinearLayoutManager(this)
+        recyclerViewPostOrder.adapter = HorizontalItemAdapter(storeList)
 
-        //中華カードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_chinese_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewChineseFood = findViewById<RecyclerView>(R.id.recycler_view_chinese_food)
+        recyclerViewChineseFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewChineseFood.adapter = HorizontalItemAdapter(storeList)
 
-        //和食カードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_japanese_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewJapaneseFood = findViewById<RecyclerView>(R.id.recycler_view_japanese_food)
+        recyclerViewJapaneseFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewJapaneseFood.adapter = HorizontalItemAdapter(storeList)
 
-        //イタリアンカードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_italian_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewItalianFood = findViewById<RecyclerView>(R.id.recycler_view_italian_food)
+        recyclerViewItalianFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewItalianFood.adapter = HorizontalItemAdapter(storeList)
 
-        //カフェカードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_cafe_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewCafeFood = findViewById<RecyclerView>(R.id.recycler_view_cafe_food)
+        recyclerViewCafeFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewCafeFood.adapter = HorizontalItemAdapter(storeList)
 
-        //ファストフードカードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_fast_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
+        val recyclerViewFastFood = findViewById<RecyclerView>(R.id.recycler_view_fast_food)
+        recyclerViewFastFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewFastFood.adapter = HorizontalItemAdapter(storeList)
 
-        //ヘルシーカードのリサイクルビュー〜アダプターの定義
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_healthy_food)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        val databaseHelper = AddDatabaseHelper(this)
-        val storeList = databaseHelper.getAllStores()
-        val adapter = HorizontalItemAdapter(storeList)
-        recyclerView.adapter = adapter
-
+        val recyclerViewHealthyFood = findViewById<RecyclerView>(R.id.recycler_view_healthy_food)
+        recyclerViewHealthyFood.layoutManager = LinearLayoutManager(this)
+        recyclerViewHealthyFood.adapter = HorizontalItemAdapter(storeList)
     }
 }
