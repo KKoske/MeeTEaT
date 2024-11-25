@@ -183,25 +183,76 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                 val imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image_url"))
 
                 val images = when (id) {
-                    16 -> listOf(
-                        ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り")
+                    //onRouteStoresカード（homescreeen filter）
+                    1 -> listOf(
+                        ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_restaurant_yoshinoya, "吉野家", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_ousho, "王将", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_alba, "パスタ「アルバ」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_doutal_2, "ドトール", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋","すぐ受け取り"),
+                        ImageItem(R.drawable.img_denen, "中華「田燕」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_tullys_2, "タリーズ", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_kushimusubi, "串カツ「串結び」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_sanyodo, "焼鳥「山陽堂」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_dongiovanni, "ビストロ ドン・ジョバンニ", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_takoyakibar, "たこ焼きバー", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_vege, "Vege+", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_ryunoko, "竜の子", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_jyaoz, "餃子バー「ジャおず」", "すぐ受け取り"),
+
+
                     )
-                    15 -> listOf(
-                        ImageItem(R.drawable.img_macdonalds, "マクドナルド", "今なら５分で受け取り")
+                    //postOrderStores
+                    2 -> listOf(
+                        ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_takoyakibar, "たこ焼きバー", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_jyaoz, "餃子バー「ジャオズ」", "すぐ受け取り"),
+                    )
+                    3 -> listOf(
+                        ImageItem(R.drawable.img_denen, "田燕", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_ousho, "王将", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_jyaoz, "ジャオズバー", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_ryunoko, "竜の子", "すぐ受け取り"),
+                    )
+                    4 -> listOf(
+                        ImageItem(R.drawable.img_kushimusubi, "串結び", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_takoyakibar, "たこ焼きバー", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_sanyodo, "焼鳥「山陽堂」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_restaurant_yoshinoya, "吉野家", "すぐ受け取り"),
+                    )
+                    5 -> listOf(
+                        ImageItem(R.drawable.img_alba, "パスタ「アルバ」", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_dongiovanni, "ビストロ ドン・ジョバンニ", "すぐ受け取り"),
+                    )
+                    6 -> listOf(
+                        ImageItem(R.drawable.img_doutal_2, "ドトール", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_tullys_2, "タリーズ", "すぐ受け取り"),
+                    )
+                    7 -> listOf(
+                        ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り"),
+                        ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
+                    )
+                    8 -> listOf(
+                        ImageItem(R.drawable.img_vege, "Vege+ ベジプラス", "すぐ受け取り"),
                     )
                     else -> emptyList()
                 }
+
                 // `Store`オブジェクトをリストに追加
                 stores.add(Store(id, name, address, imageUrl, images))
             } while (cursor.moveToNext()) // 次の行に移動
         }
-
-        stores.forEach { store ->
-            Log.d("GetAllStores", "Store: ${store.name}, Images: ${store.images}")
-        }
         // カーソルを閉じてリソースを解放
         cursor.close()
+        db.close()
         return stores
+
 
     }
 

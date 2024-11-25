@@ -1,5 +1,6 @@
 package com.websarva.wings.android.meeteat
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,9 +33,11 @@ class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val currentImage = storeList[position]
-        holder.itemName.text = currentImage.name
-        holder.itemSubInfo.text = currentImage.subInfo
-        holder.itemImage.setImageResource(currentImage.imageResId)
+        holder.itemImage.setImageResource(currentImage.imageResId)  // 画像をセット
+        holder.itemName.text = currentImage.name  // 店舗名をセット
+        holder.itemSubInfo.text = currentImage.subInfo  // サブ情報をセット
+        // ログを追加
+        Log.d("ImageListAdapter", "表示する店舗データ: $currentImage")
     }
 
 
