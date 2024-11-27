@@ -3,11 +3,24 @@ package com.websarva.wings.android.meeteat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 
 class HomeScreenActivity : AppCompatActivity() {
     private lateinit var dbHelper: AddDatabaseHelper
+
+    //カード内の画像同士の間隔調節
+    fun RecyclerView.addHorizontalSpacing(spacing: Int) {
+        val itemDecoration = object : RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(outRect: android.graphics.Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                outRect.right = spacing
+            }
+        }
+        addItemDecoration(itemDecoration)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +29,34 @@ class HomeScreenActivity : AppCompatActivity() {
         // データベースから全ての店舗データを取得
         dbHelper = AddDatabaseHelper(this)
         val storeList = dbHelper.getAllStores()
+
+        //onRouteStoreカード用　グリットなどを別枠で定義している
+        val onRouteStores = listOf(
+            Store(
+                id = 1,
+                name = "ドミノピザ",
+                address = "東京都渋谷区123-456",
+                image_url = "https://example.com/domino.jpg",
+                images = listOf(
+                    ImageItem(R.drawable.img_dominopizza, "店舗1", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_restaurant_yoshinoya, "店舗2", "準備中"),
+                    ImageItem(R.drawable.img_ousho, "店舗3", "受け取り可能"),
+                    ImageItem(R.drawable.img_alba, "店舗4", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_doutal_2, "店舗5", "予約受付中"),
+                    ImageItem(R.drawable.img_restaurant_cocoichi, "店舗6", "残りわずか"),
+                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
+                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り")
+                ),
+                isGrid = true // グリッド表示用フラグ
+
+            )
+        )
+
+
+        Log.d("HomeScreenActivity", "onRouteStores内容: $onRouteStores")
+
+
 
 
 
@@ -37,7 +78,6 @@ class HomeScreenActivity : AppCompatActivity() {
 
 
 // 各カードに表示する店舗をフィルタリング
-        val onRouteStores = storeList.filter { it.id in listOf(1) }  // カード1用
         val postOrderStores = storeList.filter { it.id in listOf(2) }  // カード2用
         val chineseFoodStores = storeList.filter { it.id in listOf(3) }  // カード3用
         val japaneseFoodStores = storeList.filter { it.id in listOf(4) }  // カード3用
@@ -47,8 +87,9 @@ class HomeScreenActivity : AppCompatActivity() {
         val healthyFoodStores = storeList.filter { it.id in listOf(8) }  // カード3用
 
 
-        Log.d("HomeScreenActivity", "onRouteStoresの内容: $onRouteStores")
+        Log.d("HomeScreenActivity", "onRouteStores size: ${onRouteStores.size}")
 
+        Log.d("HomeScreenActivity", "onRouteStoresの内容: $onRouteStores")
 
 
 // 必要なカードのリストをここに追加
@@ -59,9 +100,48 @@ class HomeScreenActivity : AppCompatActivity() {
         //recyclerViewMain.layoutManager = LinearLayoutManager(this)
         //recyclerViewMain.adapter = HorizontalItemAdapter(storeList)
 
+        /*
         val recyclerViewOnRoute = findViewById<RecyclerView>(R.id.recycler_view_on_route)
-        recyclerViewOnRoute.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        val gridLayoutManager = GridLayoutManager(this, 3) // 3列のグリッドを設定
+        recyclerViewOnRoute.layoutManager = gridLayoutManager
         recyclerViewOnRoute.adapter = HorizontalItemAdapter(onRouteStores)
+        // PagerSnapHelper を適用
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerViewOnRoute)
+
+// 確認用ログ
+        Log.d("DebugCheck", "GridLayoutManager set for recyclerViewOnRoute")
+        Log.d("DebugCheck", "onRouteStores: ${onRouteStores.size}")
+        Log.d("ParentRecyclerView", "Adapter Item Count: ${onRouteStores.size}")
+        Log.d("RecyclerViewCheck", "LayoutManager: ${recyclerViewOnRoute.layoutManager}")
+        recyclerViewOnRoute.viewTreeObserver.addOnGlobalLayoutListener {
+            Log.d("DebugCheck", "RecyclerView dimensions: width=${recyclerViewOnRoute.width}, height=${recyclerViewOnRoute.height}")
+            Log.d("DebugCheck", "RecyclerView child count: ${recyclerViewOnRoute.childCount}")
+        }
+         */
+
+
+        val recyclerViewonRouteStore = findViewById<RecyclerView>(R.id.recycler_view_on_route)
+
+// 3×3のグリッドを定義
+        val gridLayoutManager = GridLayoutManager(this, 3) // 3列
+        recyclerViewonRouteStore.layoutManager = gridLayoutManager
+
+// ページ遷移を実現
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerViewonRouteStore)
+
+// アダプター設定
+        recyclerViewonRouteStore.adapter = HorizontalItemAdapter(onRouteStores)
+
+
+
+        Log.d("AdapterDebug", "LayoutManager is set to ${recyclerViewonRouteStore.layoutManager}")
+        Log.d("AdapterDebug", "LayoutManager is set to ${recyclerViewonRouteStore.layoutManager}")
+        Log.d("AdapterDebug", "PagerSnapHelper attached: ${recyclerViewonRouteStore.onFlingListener != null}")
+
+
+
 
         val recyclerViewPostOrder = findViewById<RecyclerView>(R.id.recycler_view_post_order)
         recyclerViewPostOrder.layoutManager = LinearLayoutManager(this)
@@ -90,5 +170,9 @@ class HomeScreenActivity : AppCompatActivity() {
         val recyclerViewHealthyFood = findViewById<RecyclerView>(R.id.recycler_view_healthy_food)
         recyclerViewHealthyFood.layoutManager = LinearLayoutManager(this)
         recyclerViewHealthyFood.adapter = HorizontalItemAdapter(healthyFoodStores)
+
+
+
     }
+
 }

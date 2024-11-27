@@ -33,11 +33,14 @@ class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val currentImage = storeList[position]
+
         holder.itemImage.setImageResource(currentImage.imageResId)  // 画像をセット
         holder.itemName.text = currentImage.name  // 店舗名をセット
         holder.itemSubInfo.text = currentImage.subInfo  // サブ情報をセット
         // ログを追加
-        Log.d("ImageListAdapter", "表示する店舗データ: $currentImage")
+        Log.d("ImageListAdapter", "Binding image: ${currentImage.name}")
+        // ログを追加
+        Log.d("ImageListAdapter", "Binding image at position $position: ${currentImage.name}")
     }
 
 
