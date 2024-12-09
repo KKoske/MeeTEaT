@@ -12,9 +12,10 @@
         android:id="@+id/recycler_view_images"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:scrollbars="none"
-        android:overScrollMode="never" />
+        android:clipToPadding="false"
+        android:scrollbars="horizontal" />
+
+
 
 </LinearLayout>
 

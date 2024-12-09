@@ -6,6 +6,12 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 
 class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    //class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+        // すべての他のコードはそのまま
+
+
+
+
 
     companion object {
         private const val DATABASE_NAME = "MeeTEaT.db"
@@ -52,7 +58,6 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
 
         insertSampleData(db)
         Log.d("InsertSampleData", "サンプルデータが挿入されました")
-
 
 
     }
@@ -172,7 +177,6 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         val stores = mutableListOf<Store>()
 
 
-
         // 取得したデータが存在する場合、カーソルを使ってデータをリストに変換
         if (cursor.moveToFirst()) {
             do {
@@ -190,7 +194,7 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                         ImageItem(R.drawable.img_ousho, "王将", "すぐ受け取り"),
                         ImageItem(R.drawable.img_alba, "パスタ「アルバ」", "すぐ受け取り"),
                         ImageItem(R.drawable.img_doutal_2, "ドトール", "すぐ受け取り"),
-                        ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋","すぐ受け取り"),
+                        ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋", "すぐ受け取り"),
                         ImageItem(R.drawable.img_denen, "中華「田燕」", "すぐ受け取り"),
                         ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
                         ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り"),
@@ -204,7 +208,7 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                         ImageItem(R.drawable.img_jyaoz, "餃子バー「ジャおず」", "すぐ受け取り"),
 
 
-                    )
+                        )
                     //postOrderStores
                     2 -> listOf(
                         ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
@@ -212,12 +216,14 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                         ImageItem(R.drawable.img_takoyakibar, "たこ焼きバー", "すぐ受け取り"),
                         ImageItem(R.drawable.img_jyaoz, "餃子バー「ジャオズ」", "すぐ受け取り"),
                     )
+
                     3 -> listOf(
                         ImageItem(R.drawable.img_denen, "田燕", "すぐ受け取り"),
                         ImageItem(R.drawable.img_ousho, "王将", "すぐ受け取り"),
                         ImageItem(R.drawable.img_jyaoz, "ジャオズバー", "すぐ受け取り"),
                         ImageItem(R.drawable.img_ryunoko, "竜の子", "すぐ受け取り"),
                     )
+
                     4 -> listOf(
                         ImageItem(R.drawable.img_kushimusubi, "串結び", "すぐ受け取り"),
                         ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋", "すぐ受け取り"),
@@ -226,21 +232,26 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                         ImageItem(R.drawable.img_sanyodo, "焼鳥「山陽堂」", "すぐ受け取り"),
                         ImageItem(R.drawable.img_restaurant_yoshinoya, "吉野家", "すぐ受け取り"),
                     )
+
                     5 -> listOf(
                         ImageItem(R.drawable.img_alba, "パスタ「アルバ」", "すぐ受け取り"),
                         ImageItem(R.drawable.img_dongiovanni, "ビストロ ドン・ジョバンニ", "すぐ受け取り"),
                     )
+
                     6 -> listOf(
                         ImageItem(R.drawable.img_doutal_2, "ドトール", "すぐ受け取り"),
                         ImageItem(R.drawable.img_tullys_2, "タリーズ", "すぐ受け取り"),
                     )
+
                     7 -> listOf(
                         ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り"),
                         ImageItem(R.drawable.img_macdonalds, "マクドナルド", "すぐ受け取り"),
                     )
+
                     8 -> listOf(
                         ImageItem(R.drawable.img_vege, "Vege+ ベジプラス", "すぐ受け取り"),
                     )
+
                     else -> emptyList()
                 }
 
@@ -256,35 +267,43 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
 
     }
 
-    fun getAllItems(storeId: String): List<Item> {
+
+/*
+    fun getAllItems(storeId: Int): List<Store> {
+
         val db = readableDatabase
-        val cursor = db.rawQuery("SELECT * FROM Item WHERE store_id = ?", arrayOf(storeId))
-        val items = mutableListOf<Item>()
+        val cursor = db.rawQuery("SELECT * FROM Item WHERE store_id = ?", arrayOf(storeId.toString()))
+        val items = mutableListOf<Store>()
 
         if (cursor.moveToFirst()) {
             do {
                 val id = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
                 val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 val imageUrl = cursor.getString(cursor.getColumnIndexOrThrow("image_url"))
-                val price = cursor.getDouble(cursor.getColumnIndexOrThrow("price"))
-                val description = cursor.getString(cursor.getColumnIndexOrThrow("description"))
-                val preparationTime =
-                    cursor.getInt(cursor.getColumnIndexOrThrow("preparation_time"))
+                val price = cursor.getDouble(cursor.getColumnIndexOrThrow("price")) // 価格を取得
+
+                cursor.getInt(cursor.getColumnIndexOrThrow("preparation_time"))
+                val resourceId = context.resources.getIdentifier(imageUrl, "drawable", context.packageName)
+
                 items.add(
-                    Item(
-                        id,
-                        storeId,
-                        name,
-                        imageUrl,
-                        price,
-                        description,
-                        preparationTime
+                    Store(
+                        id = id,
+                        name = name,
+                        address = "",
+                        image_url = imageUrl,
+                        images = listOf(ImageItem(resourceId, name, "¥$price")),
+                        isGrid = false,
+                        price = price // 価格をセット
                     )
                 )
             } while (cursor.moveToNext())
         }
+
         cursor.close()
         return items
 
     }
+
+ */
 }
+

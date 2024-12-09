@@ -1,5 +1,6 @@
 package com.websarva.wings.android.meeteat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -45,6 +46,15 @@ class HomeScreenActivity : AppCompatActivity() {
                     ImageItem(R.drawable.img_doutal_2, "店舗5", "予約受付中"),
                     ImageItem(R.drawable.img_restaurant_cocoichi, "店舗6", "残りわずか"),
                     ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
+                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_restaurant_cocoichi, "店舗6", "残りわずか"),
+                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
+                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
+                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
                     ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
                     ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り")
                 ),
@@ -122,23 +132,16 @@ class HomeScreenActivity : AppCompatActivity() {
 
 
         val recyclerViewonRouteStore = findViewById<RecyclerView>(R.id.recycler_view_on_route)
-
-// 3×3のグリッドを定義
-        val gridLayoutManager = GridLayoutManager(this, 3) // 3列
-        recyclerViewonRouteStore.layoutManager = gridLayoutManager
-
-// ページ遷移を実現
-        val snapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(recyclerViewonRouteStore)
-
-// アダプター設定
+        recyclerViewonRouteStore.layoutManager = LinearLayoutManager(this)
         recyclerViewonRouteStore.adapter = HorizontalItemAdapter(onRouteStores)
-
 
 
         Log.d("AdapterDebug", "LayoutManager is set to ${recyclerViewonRouteStore.layoutManager}")
         Log.d("AdapterDebug", "LayoutManager is set to ${recyclerViewonRouteStore.layoutManager}")
         Log.d("AdapterDebug", "PagerSnapHelper attached: ${recyclerViewonRouteStore.onFlingListener != null}")
+        // RecyclerView に CustomItemDecoration を追加
+        recyclerViewonRouteStore.addItemDecoration(CustomItemDecoration(0)) // 16dpのスペースを設定
+
 
 
 
@@ -150,6 +153,7 @@ class HomeScreenActivity : AppCompatActivity() {
         val recyclerViewChineseFood = findViewById<RecyclerView>(R.id.recycler_view_chinese_food)
         recyclerViewChineseFood.layoutManager = LinearLayoutManager(this)
         recyclerViewChineseFood.adapter = HorizontalItemAdapter(chineseFoodStores)
+
 
         val recyclerViewJapaneseFood = findViewById<RecyclerView>(R.id.recycler_view_japanese_food)
         recyclerViewJapaneseFood.layoutManager = LinearLayoutManager(this)
@@ -174,5 +178,14 @@ class HomeScreenActivity : AppCompatActivity() {
 
 
     }
+    /*
+    private fun onStoreItemClick(storeId: Int) {
+        // StoreProductListActivity に遷移
+        val intent = Intent(this, StoreProductListActivity::class.java)
+        intent.putExtra("store_id", storeId) // 選択された店舗のIDを渡す
+        startActivity(intent)
+    }
+
+     */
 
 }

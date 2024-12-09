@@ -9,7 +9,7 @@ data class Store(
     val address: String,
     val image_url: String, // フィールド名を統一
     val images: List<ImageItem>,
-    val isGrid: Boolean = false// 複数の画像リスト
+    val isGrid: Boolean = false,// 複数の画像リスト
 ) {
     // 画像ファイル名からリソースIDを取得するメソッド
     fun getImageResId(context: Context): Int {

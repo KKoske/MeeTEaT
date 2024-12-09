@@ -27,7 +27,8 @@ class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         // store_item_image_scroll.xmlをインフレートしてViewHolderを作成
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.store_item_image_scroll, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.store_item_image_scroll, parent, false)
         return ImageViewHolder(view)
     }
 
@@ -41,10 +42,32 @@ class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Ad
         Log.d("ImageListAdapter", "Binding image: ${currentImage.name}")
         // ログを追加
         Log.d("ImageListAdapter", "Binding image at position $position: ${currentImage.name}")
-    }
 
+        // **マージンを設定**
+        val layoutParams =
+            holder.itemImage.layoutParams as ViewGroup.MarginLayoutParams // ImageViewのレイアウトパラメータを取得
+        val columnPosition = position % 3 // 0, 1, 2 の繰り返し（画像の段差を決める）
+
+        when (columnPosition) {
+            0 -> layoutParams.rightMargin =
+                (3 * holder.itemImage.context.resources.displayMetrics.density).toInt()
+
+            1 -> layoutParams.rightMargin =
+                (5 * holder.itemImage.context.resources.displayMetrics.density).toInt()
+
+            2 -> layoutParams.rightMargin =
+                (8 * holder.itemImage.context.resources.displayMetrics.density).toInt()
+        }
+
+        holder.itemImage.layoutParams = layoutParams // 変更したマージンを適用
+
+        // **ログを追加**
+        Log.d("ImageListAdapter", "Binding image at position $position: ${currentImage.name}")
+        Log.d("ImageListAdapter", "TopMargin for position $position: ${layoutParams.topMargin}")
+    }
 
     override fun getItemCount(): Int {
         return storeList.size
     }
 }
+

@@ -20,8 +20,6 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
     }
 
 
-
-
     // ビューホルダークラス
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //val itemImage: ImageView = view.findViewById(R.id.store_image)
@@ -33,7 +31,13 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         // レイアウトをインフレートしてビューホルダーを作成
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_store_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.card_store_item, parent, false)
+
+
+
+
+
         return ItemViewHolder(view)
     }
 
@@ -42,7 +46,10 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
         val currentItem = itemList[position]
         Log.d("AdapterDebug", "Binding item: ${currentItem.name} at position: $position")
 
-        Log.d("AdapterDebug", "RecyclerView width: ${holder.recyclerViewImages.width}, height: ${holder.recyclerViewImages.height}")
+        Log.d(
+            "AdapterDebug",
+            "RecyclerView width: ${holder.recyclerViewImages.width}, height: ${holder.recyclerViewImages.height}"
+        )
         Log.d("AdapterDebug", "Image size: ${currentItem.images.size}")
 
 
@@ -106,13 +113,30 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
         val imageAdapter = ImageListAdapter(currentItem.images)
         holder.recyclerViewImages.adapter = imageAdapter
         //これ横スクロールを可能にする レイアウトマネージャー
-        holder.recyclerViewImages.layoutManager = LinearLayoutManager(holder.recyclerViewImages.context, LinearLayoutManager.HORIZONTAL, false)
+        holder.recyclerViewImages.layoutManager = LinearLayoutManager(
+            holder.recyclerViewImages.context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
 
 
 
         if (currentItem.isGrid) {
             // 3×3グリッド表示
-            val gridLayoutManager = GridLayoutManager(holder.recyclerViewImages.context, 3,LinearLayoutManager.HORIZONTAL, false)
+            val gridLayoutManager = GridLayoutManager(
+                holder.recyclerViewImages.context,
+                3,
+                RecyclerView.HORIZONTAL,
+                false
+            )
+            //下のパディングの定義で20というのを、dpという単位にする定義。通常の20だけだとdpでは何から、位置調節が環境によってズレる可能性
+            val paddingPx = (10 * holder.recyclerViewImages.context.resources.displayMetrics.density).toInt()
+            // (パディングの追加)これはOnRouteStoreカードのグリッドの右のはみ出しのボックスのための位置調節
+            holder.recyclerViewImages.setPadding( 0, 0, paddingPx +20, 0) // 左端に次のアイテムを少し見せる
+            holder.recyclerViewImages.clipToPadding = false // パディング部分にアイテムを描画
+            // アイテムの位置を取得（縦3行ごとに段差をつける）
+
+
 
             // RecyclerViewを横スクロールに対応させる
             holder.recyclerViewImages.isNestedScrollingEnabled = false // スムーズなスクロールを可能に
@@ -121,28 +145,58 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
             holder.recyclerViewImages.adapter = ImageListAdapter(currentItem.images)
 
             // ページスクロールのスナップヘルパーを追加
-            val snapHelper = PagerSnapHelper()
-            snapHelper.attachToRecyclerView(holder.recyclerViewImages)
+            val snapHelper = CustomPagerSnapHelper(1)
+
+            if (holder.recyclerViewImages.onFlingListener == null) {
+                val snapHelper = CustomPagerSnapHelper(1)
+                snapHelper.attachToRecyclerView(holder.recyclerViewImages)
+                Log.d("AdapterDebug", "PagerSnapHelper attached")
+            }
+
 
             // 高さを設定（グリッドに対応）
             val params = holder.recyclerViewImages.layoutParams
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT // 完全修飾名を使用
+            params.width = ViewGroup.LayoutParams.MATCH_PARENT
             holder.recyclerViewImages.layoutParams = params
+
         } else {
             // 他のカードは横スクロール表示
             holder.recyclerViewImages.layoutManager =
-                LinearLayoutManager(holder.recyclerViewImages.context, LinearLayoutManager.HORIZONTAL, false)
-            holder.recyclerViewImages.adapter = ImageListAdapter(currentItem.images)
+                LinearLayoutManager(
+                    holder.recyclerViewImages.context,
+                    LinearLayoutManager.HORIZONTAL,
+                    false
+                )
 
             // 高さをデフォルトに戻す
             val params = holder.recyclerViewImages.layoutParams
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT
             holder.recyclerViewImages.layoutParams = params
         }
-        Log.d("AdapterDebug", "isGrid: ${currentItem.isGrid}, images: ${currentItem.images.size}")
+        Log.d(
+            "AdapterDebug",
+            "isGrid: ${currentItem.isGrid}, images: ${currentItem.images.size}"
+        )
         Log.d("HorizontalItemAdapter", "isGrid: ${currentItem.isGrid}")
-        Log.d("HorizontalItemAdapter", "RecyclerView LayoutManager: ${holder.recyclerViewImages.layoutManager}")
+        Log.d(
+            "HorizontalItemAdapter",
+            "RecyclerView LayoutManager: ${holder.recyclerViewImages.layoutManager}"
+        )
 
+
+        Log.d(
+            "RecyclerViewState",
+            "RecyclerView width: ${holder.recyclerViewImages.width}, height: ${holder.recyclerViewImages.height}"
+        )
+        Log.d(
+            "RecyclerViewState",
+            "RecyclerView child count: ${holder.recyclerViewImages.childCount}"
+        )
+        Log.d(
+            "RecyclerViewState",
+            "RecyclerView layout manager: ${holder.recyclerViewImages.layoutManager}"
+        )
 
 
     }
