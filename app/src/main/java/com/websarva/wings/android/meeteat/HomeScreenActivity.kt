@@ -34,7 +34,7 @@ class HomeScreenActivity : AppCompatActivity() {
         //onRouteStoreカード用　グリットなどを別枠で定義している
         val onRouteStores = listOf(
             Store(
-                id = 1,
+                id = 16,
                 name = "ドミノピザ",
                 address = "東京都渋谷区123-456",
                 image_url = "https://example.com/domino.jpg",
@@ -133,7 +133,15 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val recyclerViewonRouteStore = findViewById<RecyclerView>(R.id.recycler_view_on_route)
         recyclerViewonRouteStore.layoutManager = LinearLayoutManager(this)
-        recyclerViewonRouteStore.adapter = HorizontalItemAdapter(onRouteStores)
+        recyclerViewonRouteStore.adapter = HorizontalItemAdapter(onRouteStores) { clickedStore ->
+            Log.d("HomeScreenActivity", "Clicked Store ID: ${clickedStore.id}")
+            Log.d("HomeScreenActivity", "Starting StoreProductListActivity with store_id: ${clickedStore.id}")
+
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            Log.d("HomeScreenActivity", "Navigating to StoreProductListActivity with store_id: ${clickedStore.id}")
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
 
         Log.d("AdapterDebug", "LayoutManager is set to ${recyclerViewonRouteStore.layoutManager}")
@@ -148,37 +156,68 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val recyclerViewPostOrder = findViewById<RecyclerView>(R.id.recycler_view_post_order)
         recyclerViewPostOrder.layoutManager = LinearLayoutManager(this)
-        recyclerViewPostOrder.adapter = HorizontalItemAdapter(postOrderStores)
+        recyclerViewPostOrder.adapter = HorizontalItemAdapter(postOrderStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
         val recyclerViewChineseFood = findViewById<RecyclerView>(R.id.recycler_view_chinese_food)
         recyclerViewChineseFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewChineseFood.adapter = HorizontalItemAdapter(chineseFoodStores)
+        recyclerViewChineseFood.adapter = HorizontalItemAdapter(chineseFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
 
         val recyclerViewJapaneseFood = findViewById<RecyclerView>(R.id.recycler_view_japanese_food)
         recyclerViewJapaneseFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewJapaneseFood.adapter = HorizontalItemAdapter(japaneseFoodStores)
+        recyclerViewJapaneseFood.adapter = HorizontalItemAdapter(japaneseFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
         val recyclerViewItalianFood = findViewById<RecyclerView>(R.id.recycler_view_italian_food)
         recyclerViewItalianFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewItalianFood.adapter = HorizontalItemAdapter(italianFoodStores)
+        recyclerViewItalianFood.adapter = HorizontalItemAdapter(italianFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
         val recyclerViewCafeFood = findViewById<RecyclerView>(R.id.recycler_view_cafe_food)
         recyclerViewCafeFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewCafeFood.adapter = HorizontalItemAdapter(cafeFoodStores)
+        recyclerViewCafeFood.adapter = HorizontalItemAdapter(cafeFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
         val recyclerViewFastFood = findViewById<RecyclerView>(R.id.recycler_view_fast_food)
         recyclerViewFastFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewFastFood.adapter = HorizontalItemAdapter(fastFoodStores)
+        recyclerViewFastFood.adapter = HorizontalItemAdapter(fastFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+        }
 
         val recyclerViewHealthyFood = findViewById<RecyclerView>(R.id.recycler_view_healthy_food)
         recyclerViewHealthyFood.layoutManager = LinearLayoutManager(this)
-        recyclerViewHealthyFood.adapter = HorizontalItemAdapter(healthyFoodStores)
+        recyclerViewHealthyFood.adapter = HorizontalItemAdapter(healthyFoodStores) { clickedStore ->
+            val intent = Intent(this, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", clickedStore.id) // クリックされた店舗のIDを渡す
+            startActivity(intent)
+
+        }
+
+
 
 
 
     }
-    /*
+
     private fun onStoreItemClick(storeId: Int) {
         // StoreProductListActivity に遷移
         val intent = Intent(this, StoreProductListActivity::class.java)
@@ -186,6 +225,6 @@ class HomeScreenActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-     */
+
 
 }

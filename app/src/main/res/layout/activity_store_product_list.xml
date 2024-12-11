@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="4000dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_domino_offer"
+            android:layout_width="356dp"
+            android:layout_height="137dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="277dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_domino_halloween"
+            android:layout_width="356dp"
+            android:layout_height="137dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="465dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_domino_recommend"
+            android:layout_width="356dp"
+            android:layout_height="137dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="653dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_domino_set"
+            android:layout_width="356dp"
+            android:layout_height="137dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="853dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_domino_valuepizza"
+            android:layout_width="356dp"
+            android:layout_height="137dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="1054dp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="346dp"
+            android:layout_height="50dp"
+            android:text="ドミノピザ　三条店　"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="108dp" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="176dp"
+            android:layout_height="29dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="158dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="170dp"
+            android:layout_height="27dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="159dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="174dp"
+            android:layout_height="50dp"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="187dp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="180dp"
+            android:layout_height="51dp"
+            app:srcCompat="@drawable/img_map_home_to_station"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="187dp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="355dp"
+            android:layout_height="106dp"
+            app:srcCompat="@drawable/img_dominopizza"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="-1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

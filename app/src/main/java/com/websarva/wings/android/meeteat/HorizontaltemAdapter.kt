@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 
-class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
+class HorizontalItemAdapter(private val itemList: List<Store>,private val onItemClick: (Store) -> Unit ) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
     init {
         Log.d("HorizontalItemAdapter", "Adapter initialized")
     }
@@ -22,6 +22,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
 
     // ビューホルダークラス
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //この下の３行の定義、コメントアウトを外すとhomescreen画面に行かないループが発生する。おそらく、nullからのリサイクルビューが何度も読み込まれようとしてエラーになる問題で、繰り返すhomescreenが読み込まれて。エミュレーターが落ちる
         //val itemImage: ImageView = view.findViewById(R.id.store_image)
         //val itemName: TextView = view.findViewById(R.id.store_name)
         //val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
@@ -36,80 +37,30 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
 
 
 
-
-
         return ItemViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // データをビューにバインド
         val currentItem = itemList[position]
-        Log.d("AdapterDebug", "Binding item: ${currentItem.name} at position: $position")
+        holder.itemView.setOnClickListener {
+            Log.d("AdapterDebug", "Item clicked: ${currentItem.name}, ID: ${currentItem.id}")
+            Log.d("AdapterDebug", "Clicked on store: ${currentItem.name}")
+            Log.d("AdapterDebug", "OnClickListener is triggered for store: ${currentItem.name}")
 
-        Log.d(
-            "AdapterDebug",
-            "RecyclerView width: ${holder.recyclerViewImages.width}, height: ${holder.recyclerViewImages.height}"
-        )
-        Log.d("AdapterDebug", "Image size: ${currentItem.images.size}")
+            onItemClick(currentItem) // クリックされたアイテムをリスナーに渡す
+            Log.d("AdapterDebug", "Binding item: ${currentItem.name} at position: $position")
+            Log.d("AdapterDebug", "OnClickListener set for store: ${currentItem.name}")
+
+        }
+
+        holder.recyclerViewImages.setOnClickListener {
+            Log.d("AdapterDebug", "RecyclerView clicked")
+        }
 
 
 
-        // ImageListAdapter を設定
-        // 店舗に関連付けられた画package com.websarva.wings.android.meeteat
-        //
-        //import android.content.Context
-        //import android.util.Log
-        //import android.view.LayoutInflater
-        //import android.view.View
-        //import android.view.ViewGroup
-        //import android.widget.ImageView
-        //import android.widget.TextView
-        //import androidx.recyclerview.widget.LinearLayoutManager
-        //import androidx.recyclerview.widget.RecyclerView
-        //
-        //
-        //
-        //class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
-        //
-        //    // ビューホルダークラス
-        //    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        //        //val itemImage: ImageView = view.findViewById(R.id.store_image)
-        //        //val itemName: TextView = view.findViewById(R.id.store_name)
-        //        //val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
-        //        // 横スクロール画像用RecyclerView
-        //        val recyclerViewImages: RecyclerView = view.findViewById(R.id.recycler_view_images)
-        //    }
-        //
-        //    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        //        // レイアウトをインフレートしてビューホルダーを作成
-        //        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_store_item, parent, false)
-        //        return ItemViewHolder(view)
-        //    }
-        //
-        //    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        //        // データをビューにバインド
-        //        val currentItem = itemList[position]
-        //        //ログ用コード
-        //        if (currentItem.images.isEmpty()) {
-        //            Log.w("HorizontalItemAdapter", "画像リストが空です: ${currentItem.name}")
-        //            holder.recyclerViewImages.visibility = View.GONE // 空の場合非表示
-        //            return
-        //        }
-        //
-        //
-        //        // ImageListAdapter を設定
-        //        // 店舗に関連付けられた画像リストを渡す
-        //        val imageAdapter = ImageListAdapter(currentItem.images)
-        //        holder.recyclerViewImages.adapter = imageAdapter
-        //        //これ横スクロールを可能にする レイアウトマネージャー
-        //        holder.recyclerViewImages.layoutManager = LinearLayoutManager(holder.recyclerViewImages.context, LinearLayoutManager.HORIZONTAL, false)
-        //
-        //    }
-        //
-        //    override fun getItemCount(): Int {
-        //        return itemList.size
-        //    }
-        //}像リストを渡す
+
         val imageAdapter = ImageListAdapter(currentItem.images)
         holder.recyclerViewImages.adapter = imageAdapter
         //これ横スクロールを可能にする レイアウトマネージャー
@@ -197,6 +148,13 @@ class HorizontalItemAdapter(private val itemList: List<Store>) : RecyclerView.Ad
             "RecyclerViewState",
             "RecyclerView layout manager: ${holder.recyclerViewImages.layoutManager}"
         )
+
+        Log.d(
+            "AdapterDebug",
+            "RecyclerView width: ${holder.recyclerViewImages.width}, height: ${holder.recyclerViewImages.height}"
+        )
+        Log.d("AdapterDebug", "Image size: ${currentItem.images.size}")
+
 
 
     }

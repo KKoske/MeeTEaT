@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 
-class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     //class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
         // すべての他のコードはそのまま
 
@@ -268,12 +268,11 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 
 
-/*
-    fun getAllItems(storeId: Int): List<Store> {
+    fun getAllItems(storeId: Int): List<Product> {
 
         val db = readableDatabase
         val cursor = db.rawQuery("SELECT * FROM Item WHERE store_id = ?", arrayOf(storeId.toString()))
-        val items = mutableListOf<Store>()
+        val items = mutableListOf<Product>()
 
         if (cursor.moveToFirst()) {
             do {
@@ -286,24 +285,44 @@ class AddDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
                 val resourceId = context.resources.getIdentifier(imageUrl, "drawable", context.packageName)
 
                 items.add(
-                    Store(
+                    Product(
                         id = id,
+                        storeId = storeId,
                         name = name,
-                        address = "",
                         image_url = imageUrl,
-                        images = listOf(ImageItem(resourceId, name, "¥$price")),
-                        isGrid = false,
-                        price = price // 価格をセット
+                        price = price,
+                        description = "",
+                        preparationTime = cursor.getInt(cursor.getColumnIndexOrThrow("preparation_time"))
                     )
                 )
             } while (cursor.moveToNext())
         }
 
         cursor.close()
+        db.close()
         return items
 
     }
+    fun productsToStore(products: List<Product>, storeName: String, storeAddress: String): List<Store> {
+        // Product リストを Store 型に変換
+        return listOf(
+            Store(
+                id = products.firstOrNull()?.storeId ?: 0, // 最初の商品の storeId を利用
+                name = storeName, // 店舗名を設定
+                address = storeAddress, // 店舗住所を設定
+                image_url = "", // Storeのメイン画像がない場合は空文字列
+                images = products.map { product ->
+                    ImageItem(
+                        imageResId = product.getImageResId(context),
+                        name = product.name,
+                        subInfo = "¥${product.price.toInt()}" // 価格を整形
+                    )
+                },
+                isGrid = true // グリッド表示フラグをデフォルト設定
+            )
+        )
+    }
 
- */
-}
+        }
+
 

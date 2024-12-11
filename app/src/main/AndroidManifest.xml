@@ -28,10 +28,10 @@
             android:name=".SearchRestauntActivity"
             android:exported="false" />
         <activity
-            android:name=".RestaurantMenuListActivity"
+            android:name=".HomeScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeScreenActivity"
+            android:name=".StoreProductListActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterAddressAndRouteActivity4"
@@ -54,8 +54,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" >
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
