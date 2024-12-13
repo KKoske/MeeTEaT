@@ -16,7 +16,7 @@ data class ImageItem(
 )
 
 // アダプタークラス
-class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
+class ImageListAdapter(private val storeList: List<ImageItem>, private val onImageClick: (ImageItem) -> Unit ) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
 
     // ViewHolderクラス
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -34,6 +34,17 @@ class ImageListAdapter(private val storeList: List<ImageItem>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val currentImage = storeList[position]
+
+        // データをバインド
+        holder.itemImage.setImageResource(currentImage.imageResId)
+        holder.itemName.text = currentImage.name
+        holder.itemSubInfo.text = currentImage.subInfo
+
+        // 必要なら Glide や Picasso を使って画像を表示
+        // Glide.with(holder.imageView.context).load(image).into(holder.imageView)
+        holder.itemImage.setOnClickListener {
+            onImageClick(currentImage) // クリックされたImageItemを親アダプターに通知
+        }
 
         holder.itemImage.setImageResource(currentImage.imageResId)  // 画像をセット
         holder.itemName.text = currentImage.name  // 店舗名をセット

@@ -59,7 +59,6 @@ class HomeScreenActivity : AppCompatActivity() {
                     ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り")
                 ),
                 isGrid = true // グリッド表示用フラグ
-
             )
         )
 

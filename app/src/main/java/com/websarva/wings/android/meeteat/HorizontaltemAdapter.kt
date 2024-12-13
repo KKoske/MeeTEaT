@@ -1,6 +1,7 @@
 package com.websarva.wings.android.meeteat
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
         //val itemImage: ImageView = view.findViewById(R.id.store_image)
         //val itemName: TextView = view.findViewById(R.id.store_name)
         //val itemSubInfo: TextView = view.findViewById(R.id.store_sub_info)
+
         // 横スクロール画像用RecyclerView
         val recyclerViewImages: RecyclerView = view.findViewById(R.id.recycler_view_images)
     }
@@ -34,7 +36,6 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
         // レイアウトをインフレートしてビューホルダーを作成
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.card_store_item, parent, false)
-
 
 
         return ItemViewHolder(view)
@@ -54,14 +55,21 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
 
         }
 
-        holder.recyclerViewImages.setOnClickListener {
-            Log.d("AdapterDebug", "RecyclerView clicked")
+        // ImageListAdapter のインスタンスを作成し、リスナーを設定
+        val imageAdapter = ImageListAdapter(currentItem.images) { clickedImage ->
+            Log.d("HorizontalItemAdapter", "Clicked image: ${clickedImage.name}, Store ID: ${currentItem.id}")
+
+            // 次の画面に遷移
+            val intent = Intent(holder.itemView.context, StoreProductListActivity::class.java)
+            intent.putExtra("store_id", currentItem.id) // 店舗IDを渡す
+            intent.putExtra("image_name", clickedImage.name) // 画像の名前を渡す（必要なら）
+            holder.itemView.context.startActivity(intent)
         }
 
 
 
 
-        val imageAdapter = ImageListAdapter(currentItem.images)
+
         holder.recyclerViewImages.adapter = imageAdapter
         //これ横スクロールを可能にする レイアウトマネージャー
         holder.recyclerViewImages.layoutManager = LinearLayoutManager(
@@ -93,7 +101,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
             holder.recyclerViewImages.isNestedScrollingEnabled = false // スムーズなスクロールを可能に
 
             holder.recyclerViewImages.layoutManager = gridLayoutManager
-            holder.recyclerViewImages.adapter = ImageListAdapter(currentItem.images)
+
 
             // ページスクロールのスナップヘルパーを追加
             val snapHelper = CustomPagerSnapHelper(1)
