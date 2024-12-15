@@ -56,7 +56,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
         }
 
         // ImageListAdapter のインスタンスを作成し、リスナーを設定
-        val imageAdapter = ImageListAdapter(currentItem.images) { clickedImage ->
+        val imageAdapter = ImageListAdapter(currentItem.images, { clickedImage ->
             Log.d("HorizontalItemAdapter", "Clicked image: ${clickedImage.name}, Store ID: ${currentItem.id}")
 
             // 次の画面に遷移
@@ -64,7 +64,10 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
             intent.putExtra("store_id", currentItem.id) // 店舗IDを渡す
             intent.putExtra("image_name", clickedImage.name) // 画像の名前を渡す（必要なら）
             holder.itemView.context.startActivity(intent)
-        }
+        },
+        isNavigationEnabled = true)
+
+
 
 
 

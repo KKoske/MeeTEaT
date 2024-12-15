@@ -112,7 +112,7 @@
                 android:layout_width="406dp"
                 android:layout_height="110dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/img_domino_haloween_2"
+                app:srcCompat="@drawable/img_domino_halloween_2"
                 tools:layout_editor_absoluteX="1dp"
                 tools:layout_editor_absoluteY="37dp" />
 

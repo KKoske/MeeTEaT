@@ -114,7 +114,7 @@
             android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_domino_haloween_2" />
+            app:srcCompat="@drawable/img_domino_halloween_2" />
 
         <view
             class="android.widget.LinearLayout"

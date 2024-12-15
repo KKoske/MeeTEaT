@@ -131,15 +131,15 @@ class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context
         db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('12', '16', 'アメリカン AMERICAN', 'img_domino_recommend_4', '¥1580', 'アメリカ人のピザの楽しみ方はシンプル・イズベスト。もちろんドミノ＿ピザの原点も、とてもシンプル。アメリカンなら、これです。', '10')")
 
         //ドミノピザ　メニュー一覧　ハロウィンカード
-        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('13', '16', 'ハロウィンボルケーノ&ハロウィンブラックチキン Halloween Volvano & Haloween BlackChicken', 'img_domino_haloween_2', '¥4990', 'ハロウィンボルケーノとハロウィンブラックチキンのセット。*特製棺桶BOXは数量限定となります。店舗在庫が終了次第、通常サイドメニューBOXでお届けします。', '10')")
+        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('13', '16', 'ハロウィンボルケーノ&ハロウィンブラックチキン Halloween Volvano & Halloween BlackChicken', 'img_domino_halloween_2', '¥4990', 'ハロウィンボルケーノとハロウィンブラックチキンのセット。*特製棺桶BOXは数量限定となります。店舗在庫が終了次第、通常サイドメニューBOXでお届けします。', '10')")
 
-        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('15', '16', 'ハロウィンボルケーノ Halloween Volvano', 'img_domino_haloween_3', '¥4440', 'まるで火山のようなたっぷり濃厚チェダーチーズソースでお好きにディップしてお楽しみください！', '10')")
+        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('15', '16', 'ハロウィンボルケーノ Halloween Volvano', 'img_domino_halloween_3', '¥4440', 'まるで火山のようなたっぷり濃厚チェダーチーズソースでお好きにディップしてお楽しみください！', '10')")
 
-        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('14', '16', 'ハロウィンブラックチキン Halloween BlackChicken', 'img_domino_haloween_1', '¥590', '竹炭を使用した真っ黒なチキン。下味に９種のスパイス、衣にも黒胡椒を使用しており、程よいスパイス感と風味を感じれるオリジナルチキンです。*特製棺桶BOXは数量限定となります。店舗在庫が終了次第、通常サイドメニューBOXでお届けします。', '10')")
+        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('14', '16', 'ハロウィンブラックチキン Halloween BlackChicken', 'img_domino_halloween_1', '¥590', '竹炭を使用した真っ黒なチキン。下味に９種のスパイス、衣にも黒胡椒を使用しており、程よいスパイス感と風味を感じれるオリジナルチキンです。*特製棺桶BOXは数量限定となります。店舗在庫が終了次第、通常サイドメニューBOXでお届けします。', '10')")
 
-        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('16', '16', 'チーズボルケーノ ポテナゲ (ポテト&ナゲット) Cheese Volcano Pote-Nage(Potato & Nuggets)', 'img_domino_haloween_4', '¥1290', 'たっぷり濃厚チェダーチーズソースをポテトフライとチキンナゲットと一緒にお楽しみください！チェーダーチーズソース、ポテトフライ、チキンナゲット(8ピース)の組み合わせ。', '10')")
+        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('16', '16', 'チーズボルケーノ ポテナゲ (ポテト&ナゲット) Cheese Volcano Pote-Nage(Potato & Nuggets)', 'img_domino_halloween_4', '¥1290', 'たっぷり濃厚チェダーチーズソースをポテトフライとチキンナゲットと一緒にお楽しみください！チェーダーチーズソース、ポテトフライ、チキンナゲット(8ピース)の組み合わせ。', '10')")
 
-        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('17', '16', 'チーズボルケーノ ディップソース Cheese Volcano Dip Sause', 'img_domino_haloween_5', '¥799', 'たっぷり濃厚チェダーチーズソースをお好きなぷ座やサイドメニューと一緒にお楽しみください！', '10')")
+        db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('17', '16', 'チーズボルケーノ ディップソース Cheese Volcano Dip Sause', 'img_domino_halloween_5', '¥799', 'たっぷり濃厚チェダーチーズソースをお好きなぷ座やサイドメニューと一緒にお楽しみください！', '10')")
 
         //ドミノピザ　メニュー一覧　セットカード
         db.execSQL("INSERT INTO Item (id, store_id, name, image_url, price, description, preparation_time) VALUES('18', '16', 'Sサイズピザ３枚+サイド2個セット 3S-size Pizzas + 2Sides Set', 'img_domino_set_2', '¥4799', 'お好きなSピザ３枚+お好きなサイドメニュー2個', '10')")
@@ -304,6 +304,9 @@ class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context
 
     }
     fun productsToStore(products: List<Product>, storeName: String, storeAddress: String): List<Store> {
+        Log.d("productsToStore", "Received Products Size: ${products.size}")
+        Log.d("productsToStore", "Products List: $products")
+
         // Product リストを Store 型に変換
         return listOf(
             Store(
@@ -312,13 +315,17 @@ class AddDatabaseHelper(private val context: Context) : SQLiteOpenHelper(context
                 address = storeAddress, // 店舗住所を設定
                 image_url = "", // Storeのメイン画像がない場合は空文字列
                 images = products.map { product ->
+                    //resIdの確認ログの追加
+                    val resId = product.getImageResId(context)
+                    Log.d("productsToStore", "Product: ${product.name}, ImageResId: $resId")
+
                     ImageItem(
                         imageResId = product.getImageResId(context),
                         name = product.name,
                         subInfo = "¥${product.price.toInt()}" // 価格を整形
                     )
                 },
-                isGrid = true // グリッド表示フラグをデフォルト設定
+
             )
         )
     }

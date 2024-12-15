@@ -16,7 +16,7 @@ data class ImageItem(
 )
 
 // アダプタークラス
-class ImageListAdapter(private val storeList: List<ImageItem>, private val onImageClick: (ImageItem) -> Unit ) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
+class ImageListAdapter(private val storeList: List<ImageItem>, private val onImageClick: (ImageItem) -> Unit, private val isNavigationEnabled: Boolean = true ) : RecyclerView.Adapter<ImageListAdapter.ImageViewHolder>() {
 
     // ViewHolderクラス
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -43,8 +43,18 @@ class ImageListAdapter(private val storeList: List<ImageItem>, private val onIma
         // 必要なら Glide や Picasso を使って画像を表示
         // Glide.with(holder.imageView.context).load(image).into(holder.imageView)
         holder.itemImage.setOnClickListener {
-            onImageClick(currentImage) // クリックされたImageItemを親アダプターに通知
+            if (isNavigationEnabled) {
+                onImageClick(currentImage)
+            } else {
+                if (currentImage.imageResId == R.drawable.img_domino_halloween_1) {
+                    onImageClick(currentImage)
+                } else {
+                    Log.d("ImageListAdapter", "This image is not clickable.")
+                }
+            }
         }
+
+
 
         holder.itemImage.setImageResource(currentImage.imageResId)  // 画像をセット
         holder.itemName.text = currentImage.name  // 店舗名をセット
