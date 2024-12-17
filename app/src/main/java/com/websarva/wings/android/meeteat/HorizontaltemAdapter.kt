@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 
-class HorizontalItemAdapter(private val itemList: List<Store>,private val onItemClick: (Store) -> Unit ) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
+class HorizontalItemAdapter(private val itemList: List<Store>,private val onItemClick: (Store) -> Unit,private val isNavigationEnabled: Boolean ) : RecyclerView.Adapter<HorizontalItemAdapter.ItemViewHolder>() {
     init {
         Log.d("HorizontalItemAdapter", "Adapter initialized")
     }
@@ -45,6 +45,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
         // データをビューにバインド
         val currentItem = itemList[position]
         holder.itemView.setOnClickListener {
+            Log.d("ClickHorizontalAdapter", "カード全体がタップされました: ${currentItem.name}")
             Log.d("AdapterDebug", "Item clicked: ${currentItem.name}, ID: ${currentItem.id}")
             Log.d("AdapterDebug", "Clicked on store: ${currentItem.name}")
             Log.d("AdapterDebug", "OnClickListener is triggered for store: ${currentItem.name}")
@@ -65,7 +66,7 @@ class HorizontalItemAdapter(private val itemList: List<Store>,private val onItem
             intent.putExtra("image_name", clickedImage.name) // 画像の名前を渡す（必要なら）
             holder.itemView.context.startActivity(intent)
         },
-        isNavigationEnabled = true)
+        isNavigationEnabled)
 
 
 

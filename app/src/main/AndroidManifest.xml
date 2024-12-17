@@ -52,6 +52,12 @@
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
+            android:name=".ProductDescriptionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".product_detail_fragment"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
 

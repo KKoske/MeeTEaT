@@ -1,5 +1,6 @@
 package com.websarva.wings.android.meeteat
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -43,11 +44,14 @@ class ImageListAdapter(private val storeList: List<ImageItem>, private val onIma
         // 必要なら Glide や Picasso を使って画像を表示
         // Glide.with(holder.imageView.context).load(image).into(holder.imageView)
         holder.itemImage.setOnClickListener {
+            Log.d("clickImageListAdapter", "LinearLayout（画像部分）がタップされました: ${currentImage.name}")
             if (isNavigationEnabled) {
                 onImageClick(currentImage)
             } else {
                 if (currentImage.imageResId == R.drawable.img_domino_halloween_1) {
-                    onImageClick(currentImage)
+                    val intent = Intent(holder.itemView.context, ProductDescriptionActivity::class.java)
+                    intent.putExtra("product_name", currentImage.name)
+                    holder.itemView.context.startActivity(intent)
                 } else {
                     Log.d("ImageListAdapter", "This image is not clickable.")
                 }

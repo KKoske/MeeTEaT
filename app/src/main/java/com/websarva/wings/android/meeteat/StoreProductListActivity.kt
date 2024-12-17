@@ -51,9 +51,9 @@ class StoreProductListActivity : AppCompatActivity() {
         // RecyclerViewの設定（オファリング）
         val offerRecyclerView = findViewById<RecyclerView>(R.id.recycler_view_domino_offer)
         offerRecyclerView.layoutManager = LinearLayoutManager(this)
-        offerRecyclerView.adapter = HorizontalItemAdapter(offerStores){ clickedStore ->
+        offerRecyclerView.adapter = HorizontalItemAdapter(offerStores,{ clickedStore ->
             Log.d("StoreProductList", "Clicked limited time store: ${clickedStore.name}")
-        }
+        }, isNavigationEnabled = false)
 
         /*
         { clickedStore ->
@@ -82,7 +82,12 @@ class StoreProductListActivity : AppCompatActivity() {
             val limitedTimeRecyclerView =
                 findViewById<RecyclerView>(R.id.recycler_view_domino_halloween)
             limitedTimeRecyclerView.layoutManager = LinearLayoutManager(this)
-            limitedTimeRecyclerView.adapter = HorizontalItemAdapter(limitedTimeStores) { clickedStore ->
+            limitedTimeRecyclerView.adapter = HorizontalItemAdapter(limitedTimeStores, { clickedStore ->
+                Log.d("StoreProductList", "Clicked recommended store: ${clickedStore.name}")
+            }, isNavigationEnabled = false)
+
+
+            /*{ clickedStore ->
                 Log.d("StoreProductList", "Clicked limited time store: ${clickedStore.name}")
 
                 // ImageListAdapter を作成して、特定の画像クリック時の動作を定義
@@ -106,29 +111,33 @@ class StoreProductListActivity : AppCompatActivity() {
                 limitedTimeRecyclerView.adapter = imageAdapter
             }
 
+             */
+
             // RecyclerViewの設定（おすすめ）
             val recommendedRecyclerView =
                 findViewById<RecyclerView>(R.id.recycler_view_domino_recommend)
             recommendedRecyclerView.layoutManager = LinearLayoutManager(this)
             recommendedRecyclerView.adapter =
-                HorizontalItemAdapter(recommendedStores) { clickedStore ->
+                HorizontalItemAdapter(recommendedStores, { clickedStore ->
                     Log.d("StoreProductList", "Clicked recommended store: ${clickedStore.name}")
-                }
+                }, isNavigationEnabled = false)
+
+
             // RecyclerViewの設定（期間限定）
             val dominoSetRecyclerView = findViewById<RecyclerView>(R.id.recycler_view_domino_set)
             dominoSetRecyclerView.layoutManager = LinearLayoutManager(this)
-            dominoSetRecyclerView.adapter = HorizontalItemAdapter(dominoSetStores) { clickedStore ->
+            dominoSetRecyclerView.adapter = HorizontalItemAdapter(dominoSetStores, { clickedStore ->
                 Log.d("StoreProductList", "Clicked limited time store: ${clickedStore.name}")
-            }
+            }, isNavigationEnabled = false)
 
             // RecyclerViewの設定（おすすめ）
             val valuePizzaRecyclerView =
                 findViewById<RecyclerView>(R.id.recycler_view_domino_valuepizza)
             valuePizzaRecyclerView.layoutManager = LinearLayoutManager(this)
             valuePizzaRecyclerView.adapter =
-                HorizontalItemAdapter(valuePizzaStores) { clickedStore ->
+                HorizontalItemAdapter(valuePizzaStores, { clickedStore ->
                     Log.d("StoreProductList", "Clicked recommended store: ${clickedStore.name}")
-                }
+                }, isNavigationEnabled = false)
         }
 
 
