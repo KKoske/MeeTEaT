@@ -39,7 +39,7 @@ class HomeScreenActivity : AppCompatActivity() {
                 address = "東京都渋谷区123-456",
                 image_url = "https://example.com/domino.jpg",
                 images = listOf(
-                    ImageItem(R.drawable.img_dominopizza, "店舗1", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り"),
                     ImageItem(R.drawable.img_restaurant_yoshinoya, "店舗2", "準備中"),
                     ImageItem(R.drawable.img_ousho, "店舗3", "受け取り可能"),
                     ImageItem(R.drawable.img_alba, "店舗4", "すぐ受け取り"),

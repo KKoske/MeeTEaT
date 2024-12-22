@@ -48,7 +48,7 @@ class ImageListAdapter(private val storeList: List<ImageItem>, private val onIma
             if (isNavigationEnabled) {
                 onImageClick(currentImage)
             } else {
-                if (currentImage.imageResId == R.drawable.img_domino_halloween_1) {
+                if (currentImage.imageResId == R.drawable.img_domino_halloween_2) {
                     val intent = Intent(holder.itemView.context, ProductDescriptionActivity::class.java)
                     intent.putExtra("product_name", currentImage.name)
                     holder.itemView.context.startActivity(intent)

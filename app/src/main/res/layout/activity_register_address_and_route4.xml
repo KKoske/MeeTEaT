@@ -56,7 +56,9 @@
         android:text="@string/registration_complete_btn_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#FF5F6D"
+        app:strokeWidth="2dp" />
 
     <TextView
         android:id="@+id/textView10"

@@ -25,7 +25,9 @@
         android:text="@string/continueButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_countyphone_2" />
+        app:layout_constraintTop_toBottomOf="@+id/img_countyphone_2"
+        app:strokeColor="#FF5F6D"
+        app:strokeWidth="2dp" />
 
     <View
         android:id="@+id/divider_between_social_and_linkFindAccount_2"

@@ -124,11 +124,15 @@
         android:id="@+id/txt_phone_number_Label"
         android:layout_width="243dp"
         android:layout_height="32dp"
+        android:backgroundTint="#FF5F6D"
         android:gravity="bottom"
-        android:text="電話番号"
+        android:text="電話番号(ここをタップ)"
+        android:textColor="#FF5F6D"
         app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone"
         app:layout_constraintTop_toTopOf="@+id/editTextPhone" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
