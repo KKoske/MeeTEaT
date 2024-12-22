@@ -23,7 +23,9 @@ MEETEATは、飲食店のテイクアウト需要を支援するために作成�
    git clone https://github.com/your-username/meeteat.git
 ```
 2:　AndroidSStudioでプロジェクトを開く
+
 3:　プロジェクトをビルド
+
 4: エミュレーターまたは実機で実行
 - 推奨設定:APIレベル33(Android 13.0"Tiramisu"| arm64)
 - 実機の場合はUSBデバッグを有効にしてください。
