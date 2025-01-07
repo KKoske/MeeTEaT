@@ -27,6 +27,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.LocationServices
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.maps.android.PolyUtil
 import org.json.JSONException
@@ -69,7 +70,9 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
                 map.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 15f))
 
                 // 次のステップ: 設定地点とのルート表示
-                drawRoute(currentLatLng, LatLng(35.658581, 139.745433)) // 東京タワーの座標
+                val destinationLatLng = LatLng(35.658581, 139.745433)
+                drawRoute(currentLatLng, destinationLatLng) // 東京タワーの座標
+                adjustCameraToRoute(currentLatLng, destinationLatLng)
             } else {
                 Log.e("LocationError", "現在地が取得できません") // 現在地が null の場合
             }
@@ -78,16 +81,33 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
+    private fun adjustCameraToRoute(start: LatLng, end: LatLng) {
+        // LatLngBounds.Builder を作成
+        val boundsBuilder = LatLngBounds.Builder()
+
+        // 現在地と設定地点を追加
+        boundsBuilder.include(start) // 現在地
+        boundsBuilder.include(end)   // 目的地
+
+        // 範囲（LatLngBounds）を構築
+        val bounds = boundsBuilder.build()
+
+        // マップのカメラを範囲全体に収める
+        val padding = 100 // 地図の端に余白を付ける（ピクセル単位）
+        val cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, padding)
+        map.animateCamera(cameraUpdate) // カメラをアニメーションで移動
+    }
+
 
     private fun setMarker(location: LatLng) {
         map.addMarker(MarkerOptions().position(location).title("設定地点"))
     }
 
     private fun drawRoute(origin: LatLng, destination: LatLng) {
-        val url = "https://maps.googleapis.com/maps/api/directions/json?" +
+        val url ="https://maps.googleapis.com/maps/api/directions/json?" +
                 "origin=${origin.latitude},${origin.longitude}" +
                 "&destination=${destination.latitude},${destination.longitude}" +
-                "&key=AIzaSyDxfYSGhxoTv5yCq8Kuf1sfGxd7LmUW36o"
+                "&key=AIzaSyBIwfzBs1OV7bNs6SeeT6gLTlxK1ZcsV0Y"
 
         Log.d("RequestURL", url) // リクエスト URL をログ出力
 
@@ -164,10 +184,12 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
-        checkLocationPermission()
+
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        checkLocationPermission()
 
         // データベースから全ての店舗データを取得
         dbHelper = AddDatabaseHelper(this)

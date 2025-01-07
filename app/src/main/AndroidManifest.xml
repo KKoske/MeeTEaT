@@ -20,7 +20,7 @@
         <!-- Google Maps APIキー -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDxfYSGhxoTv5yCq8Kuf1sfGxd7LmUW36o" />
+            android:value="AIzaSyDxfYSGhxoTv5yCq8Kuf1sfGxd7LmUW36o"/>
 
         <activity
             android:name=".OrderSuccessActivity"
