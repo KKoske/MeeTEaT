@@ -28,6 +28,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import com.google.maps.android.PolyUtil
 import org.json.JSONException
@@ -93,7 +94,7 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
         val bounds = boundsBuilder.build()
 
         // マップのカメラを範囲全体に収める
-        val padding = 100 // 地図の端に余白を付ける（ピクセル単位）
+        val padding = 80 // 地図の端に余白を付ける（ピクセル単位）
         val cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, padding)
         map.animateCamera(cameraUpdate) // カメラをアニメーションで移動
     }
@@ -128,7 +129,7 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
             if (path.isEmpty()) {
                 Log.e("RouteError", "ルートデータが空です") // 空のルートの場合のログ
             } else {
-                map.addPolyline(PolylineOptions().addAll(path).width(10f).color(Color.BLUE))
+                map.addPolyline(PolylineOptions().addAll(path).width(10f).color(Color.RED))
             }
         }, {
             Log.e("RouteError", "経路情報の取得に失敗しました: ${it.message}") // リクエスト失敗時のログ

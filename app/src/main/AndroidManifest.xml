@@ -44,22 +44,22 @@
             android:name=".StoreProductListActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterAddressAndRouteActivity4"
+            android:name=".FinalConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterAddressAndRouteActivity3"
+            android:name=".RegisterRouteHomeToStation"
             android:exported="false" />
         <activity
-            android:name=".RegisterAddressAndRouteActivity2"
+            android:name=".StationExitAdjustmentActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterAddressAndRouteActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity2"
+            android:name=".SecondRegisterDammyPhoneNumber"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".RegisterEmailAndPhoneNumber"
             android:exported="false" />
         <activity
             android:name=".ProductDescriptionActivity"
