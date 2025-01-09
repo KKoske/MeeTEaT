@@ -108,7 +108,7 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
         val url ="https://maps.googleapis.com/maps/api/directions/json?" +
                 "origin=${origin.latitude},${origin.longitude}" +
                 "&destination=${destination.latitude},${destination.longitude}" +
-                "&key=AIzaSyBIwfzBs1OV7bNs6SeeT6gLTlxK1ZcsV0Y"
+                "&key=AIzaSyBXVO3tIpmXySd5PxV71uPF-IadDEYPrBM"
 
         Log.d("RequestURL", url) // リクエスト URL をログ出力
 
