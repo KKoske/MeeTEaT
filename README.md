@@ -9,7 +9,7 @@
 
 ・本デモアプリの操作方法
 
-![アプリのデモ]<img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT%20GIF.gif" alt="アプリのデモ" width="50">
+![アプリのデモ]<img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT%20GIF.gif" alt="アプリのデモ" width="300">
 ・このアプリで何ができるのか、
 
 本アプリは自宅周辺における飲食店を表示し、テイクアウトを予約注文することが可能なサービスです。
