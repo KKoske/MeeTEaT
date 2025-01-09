@@ -12,7 +12,9 @@
 <img src= "https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT.gif" alt="アプリのデモ" width="300">
 
 1:赤い囲みをタップして進む。
+
 2:ルート上の店舗のドミノピザをクリック！
+
 3:ハロウィンボルケーノ&ハロウィンブラックチキンをクリック！
 
 ・このアプリで何ができるのか、
