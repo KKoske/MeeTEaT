@@ -5,17 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class SecondActivity2 : AppCompatActivity() {
+class RegisterRouteHomeToStation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second2)
-
+        setContentView(R.layout.activity_register_route_home_to_station)
         // ボタンを取得
-        val buttonContinue = findViewById<Button>(R.id.btn_continue_2)
+        val buttonContinue = findViewById<Button>(R.id.nextButton4)
 
         // ボタンがクリックされたらRegisterAddressAndRouteActivityに遷移
         buttonContinue.setOnClickListener {
-            val intent = Intent(this, RegisterAddressAndRouteActivity::class.java)
+            val intent = Intent(this, FinalConfirmationActivity::class.java)
             startActivity(intent) // 遷移を開始
         }
     }

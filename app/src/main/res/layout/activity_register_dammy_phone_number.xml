@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".SecondRegisterDammyPhoneNumber">
+
 
     <TextView
-        android:id="@+id/txt_phone_number_prompt"
+        android:id="@+id/txt_phone_number_prompt_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -17,17 +18,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_continue_2"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:text="@string/continueButtonLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countyphone" />
+        app:layout_constraintTop_toBottomOf="@+id/img_countyphone_2"
+        app:strokeColor="#FF5F6D"
+        app:strokeWidth="2dp" />
 
     <View
-        android:id="@+id/divider_between_social_and_linkFindAccount"
+        android:id="@+id/divider_between_social_and_linkFindAccount_2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -36,10 +39,10 @@
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_email" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_email_2" />
 
     <View
-        android:id="@+id/divider_between_continueBtn_social"
+        android:id="@+id/divider_between_continueBtn_social_2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -48,87 +51,89 @@
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_continue" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_continue_2" />
 
     <Button
-        android:id="@+id/btn_login_email"
+        android:id="@+id/btn_login_email_2"
         android:layout_width="294dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:text="@string/mailAddressLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_rakuten" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_rakuten_2" />
 
     <Button
-        android:id="@+id/btn_login_apple"
+        android:id="@+id/btn_login_apple_2"
         android:layout_width="303dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:text="@string/appleLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_between_continueBtn_social" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_between_continueBtn_social_2" />
 
     <Button
-        android:id="@+id/btn_login_rakuten"
+        android:id="@+id/btn_login_rakuten_2"
         android:layout_width="303dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:text="@string/rakutenLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_google" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_google_2" />
 
     <Button
-        android:id="@+id/btn_login_google"
+        android:id="@+id/btn_login_google_2"
         android:layout_width="303dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:text="@string/googleLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_apple" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_apple_2" />
 
     <TextView
-        android:id="@+id/link_find_account"
+        android:id="@+id/link_find_account_2"
         android:layout_width="264dp"
         android:layout_height="31dp"
         android:layout_marginTop="16dp"
         android:text="@string/findMyAccountPrompt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_between_social_and_linkFindAccount" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_between_social_and_linkFindAccount_2" />
 
     <ImageView
-        android:id="@+id/countyphone"
+        android:id="@+id/img_countyphone_2"
         android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/txt_phone_number_prompt"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone_number_prompt"
+        app:layout_constraintStart_toStartOf="@+id/txt_phone_number_prompt_2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_phone_number_prompt_2"
         app:srcCompat="@drawable/japanflag" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/edit_TextPhone_2"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="phone"
-        app:layout_constraintStart_toEndOf="@+id/countyphone"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone_number_prompt" />
+        app:layout_constraintStart_toEndOf="@+id/img_countyphone_2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_phone_number_prompt_2" />
 
     <TextView
-        android:id="@+id/txt_phone_number_Label"
-        android:layout_width="243dp"
+        android:id="@+id/txt_phone_number_Label_2"
+        android:layout_width="234dp"
         android:layout_height="32dp"
         android:gravity="bottom"
-        android:text="電話番号"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone"
-        app:layout_constraintTop_toTopOf="@+id/editTextPhone" />
+        android:text="090-3826-4232"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_TextPhone_2"
+        app:layout_constraintEnd_toEndOf="@+id/edit_TextPhone_2"
+        app:layout_constraintStart_toStartOf="@+id/edit_TextPhone_2"
+        app:layout_constraintTop_toTopOf="@+id/edit_TextPhone_2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

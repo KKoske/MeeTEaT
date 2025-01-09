@@ -3,21 +3,21 @@ package com.websarva.wings.android.meeteat
 import android.content.Context
 import android.util.Log
 
-data class Store(
+data class Product(
     val id: Int,
+    val storeId: Int,
     val name: String,
-    val address: String,
-    val image_url: String, // フィールド名を統一
-    val images: List<ImageItem>,
-    val isGrid: Boolean = false,// 複数の画像リスト
+    val image_url: String,
+    val price: Double,
+    val description: String,
+    val preparationTime: Int
 ) {
-    // 画像ファイル名からリソースIDを取得するメソッド
+    // 画像URLをリソースIDに変換
     fun getImageResId(context: Context): Int {
         val resId = context.resources.getIdentifier(image_url, "drawable", context.packageName)
         if (resId == 0) {
-            Log.e("Store", "Invalid image resource: $image_url")
+            Log.e("Product", "Invalid image resource: $image_url")
         }
         return resId
     }
-
 }

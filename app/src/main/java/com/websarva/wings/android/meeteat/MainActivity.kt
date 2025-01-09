@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val logoImageView: ImageView = findViewById(R.id.circleImageView)
 
         logoImageView.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, RegisterEmailAndPhoneNumber::class.java)
             startActivity(intent)
         }
     }

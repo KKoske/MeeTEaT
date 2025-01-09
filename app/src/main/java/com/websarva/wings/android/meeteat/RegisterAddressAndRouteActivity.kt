@@ -14,7 +14,7 @@ class RegisterAddressAndRouteActivity : AppCompatActivity() {
 
         // ボタンがクリックされたらRegisterAddressAndRouteActivityに遷移
         buttonContinue.setOnClickListener {
-            val intent = Intent(this, RegisterAddressAndRouteActivity2::class.java)
+            val intent = Intent(this, StationExitAdjustmentActivity::class.java)
             startActivity(intent) // 遷移を開始
         }
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterAddressAndRouteActivity4">
+    tools:context=".FinalConfirmationActivity">
 
     <TextView
         android:id="@+id/textView8"
@@ -56,7 +56,9 @@
         android:text="@string/registration_complete_btn_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#FF5F6D"
+        app:strokeWidth="2dp" />
 
     <TextView
         android:id="@+id/textView10"
