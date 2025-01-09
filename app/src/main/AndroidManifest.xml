@@ -20,7 +20,7 @@
         <!-- Google Maps APIキー -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDxfYSGhxoTv5yCq8Kuf1sfGxd7LmUW36o"/>
+            android:value="AIzaSyAPlV009oGel-WxDKv2rAOMCtsWOoZmsvo"/>
 
         <activity
             android:name=".OrderSuccessActivity"
@@ -31,9 +31,7 @@
         <activity
             android:name=".ReviewOrderSummaryActivity"
             android:exported="false" />
-        <activity
-            android:name=".ProductDetailActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SearchRestauntActivity"
             android:exported="false" />
