@@ -9,8 +9,7 @@
 
 ・本デモアプリの操作方法
 
-[![アプリのデモ](MeetEaT%20GIF.gif)](https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT%20GIF.gif
-)
+![アプリのデモ](https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT%20GIF.gif)
 
 ・このアプリで何ができるのか、
 
