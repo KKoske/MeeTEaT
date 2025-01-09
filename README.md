@@ -9,7 +9,8 @@
 
 ・本デモアプリの操作方法
 
-[MeeTEaT GIF.gif](https://github.com/KKoske/MeeTEaT/commit/50544b286b232012dacf78d9402f5d8860c75b5e)
+[[MeeTEaT GIF.gif](https://github.com/KKoske/MeeTEaT/commit/50544b286b232012dacf78d9402f5d8860c75b5e)](https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeetEAT%20GIF.gif
+)
 
 ・このアプリで何ができるのか、
 
