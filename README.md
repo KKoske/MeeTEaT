@@ -11,6 +11,7 @@
 
 <img src= "https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT.gif" alt="アプリのデモ" width="300">
 
+
 1:赤い囲みをタップして進む。
 
 2:「ドミノピザ」をクリック！
