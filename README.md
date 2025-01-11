@@ -12,7 +12,7 @@
 <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT.gif" alt="アプリのデモ" width="300">
 
 
-https://raw.githubusercontent.com/KKoske/MeeTEaT/Main/MeeTEaT3MB.gif
+<img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT3MB.gif">
 
 1:赤い囲みをタップして進む。
 
