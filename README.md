@@ -9,7 +9,7 @@
 
 ・本デモアプリの操作方法
 
-<img src= "https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT.gif">
+<img src= "https://raw.githubusercontent.com/KKoske/MeeTEaT/main/MeeTEaT.gif" alt="アプリのデモ" width="300">
 
 
 1:赤い囲みをタップして進む。
