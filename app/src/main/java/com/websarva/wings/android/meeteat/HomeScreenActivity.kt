@@ -108,7 +108,8 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
         val url ="https://maps.googleapis.com/maps/api/directions/json?" +
                 "origin=${origin.latitude},${origin.longitude}" +
                 "&destination=${destination.latitude},${destination.longitude}" +
-                "&key=AIzaSyBXVO3tIpmXySd5PxV71uPF-IadDEYPrBM"
+                //Directions APIのAPIキー
+                "&key=ここに代入"
 
         Log.d("RequestURL", url) // リクエスト URL をログ出力
 
@@ -205,23 +206,23 @@ class HomeScreenActivity : AppCompatActivity(), OnMapReadyCallback {
                 image_url = "https://example.com/domino.jpg",
                 images = listOf(
                     ImageItem(R.drawable.img_dominopizza, "ドミノピザ", "すぐ受け取り"),
-                    ImageItem(R.drawable.img_restaurant_yoshinoya, "店舗2", "準備中"),
-                    ImageItem(R.drawable.img_ousho, "店舗3", "受け取り可能"),
-                    ImageItem(R.drawable.img_alba, "店舗4", "すぐ受け取り"),
-                    ImageItem(R.drawable.img_doutal_2, "店舗5", "予約受付中"),
-                    ImageItem(R.drawable.img_restaurant_cocoichi, "店舗6", "残りわずか"),
-                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
-                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
-                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
-                    ImageItem(R.drawable.img_restaurant_cocoichi, "店舗6", "残りわずか"),
-                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
-                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
-                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
-                    ImageItem(R.drawable.img_denen, "店舗7", "受け取り可能"),
-                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
-                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り"),
-                    ImageItem(R.drawable.img_macdonalds, "店舗8", "準備中"),
-                    ImageItem(R.drawable.img_nattou, "店舗9", "すぐ受け取り")
+                    ImageItem(R.drawable.img_restaurant_yoshinoya, "吉野家", "準備中"),
+                    ImageItem(R.drawable.img_ousho, "王将", "受け取り可能"),
+                    ImageItem(R.drawable.img_alba, "Pasta アルバ", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_doutal_2, "ドトール", "予約受付中"),
+                    ImageItem(R.drawable.img_restaurant_cocoichi, "CoCo壱番屋", "残りわずか"),
+                    ImageItem(R.drawable.img_denen, "「田燕」", "受け取り可能"),
+                    ImageItem(R.drawable.img_macdonalds, "マクドナルド", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_jyaoz, "餃子バーJyaoz", "残りわずか"),
+                    ImageItem(R.drawable.img_kushimusubi, "串かつ串結び", "受け取り可能"),
+                    ImageItem(R.drawable.img_ryunoko, "中華「竜の子」", "準備中"),
+                    ImageItem(R.drawable.img_takoyakibar, "たこ焼きBar", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_tullys_2, "タリーズ", "受け取り可能"),
+                    ImageItem(R.drawable.img_vege, "ベジプラス", "準備中"),
+                    ImageItem(R.drawable.img_dongiovanni, "ドン・ジョバンニ", "すぐ受け取り"),
+                    ImageItem(R.drawable.img_sanyodo, "焼きとり山陽堂", "準備中"),
+                    ImageItem(R.drawable.img_nattou, "納豆「関東屋」", "すぐ受け取り")
                 ),
                 isGrid = true // グリッド表示用フラグ
             )

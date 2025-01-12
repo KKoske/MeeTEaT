@@ -17,10 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MeeTEaT"
         tools:targetApi="31" >
-        <!-- Google Maps APIキー -->
+        <!-- Google Maps APIキーをここに代入！ -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyAPlV009oGel-WxDKv2rAOMCtsWOoZmsvo"/>
+            android:value="代入はここ"/>
 
         <activity
             android:name=".OrderSuccessActivity"
