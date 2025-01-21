@@ -27,8 +27,9 @@
 メイン画面では現在地や自宅周辺の飲食店が表示されています。選択した飲食店のメニュー商品をカートに入れ、購入することができます。購入確定後は店舗に商品を受け取りに行き、一連の取引が完了する流れになります。
 
 
-技術 README
 
+
+技術 README
 MEETEAT -モバイルテイクアウト補助アプリ-
 
 プロジェクト概要 MEETEATは、飲食店のテイクアウト需要を支援するために作成されたモバイルアプ リです。 飲食店と顧客をシームレスにつなぐことで、スムーズな注文体験を提供し、 飲食店の売上向上をサポートします。
@@ -36,9 +37,7 @@ MEETEAT -モバイルテイクアウト補助アプリ-
 主な機能:(実装済み機能のみここに記載)
 
 • 飲食店の一覧表示
-
 • 飲食店の商品一覧の表示
-
 • ユーザーフレンドリーなUI/UX設計
 • アプリの流れを簡易的に体験できる画面遷移
 • 現在地と設定地点のルートを表示するMAP機能 使用技術:
@@ -54,9 +53,7 @@ git clone https://github.com/your-username/meeteat.git
 2: AndroidStudioでプロジェクトを開く
 3: APIキーの代入(セキュリティとして、意図的にAPIキーをソースコードから消し ています)
 ・Manifest.xmlのappilication,meta-dataよりvalueをAPIキーに変更 「AIzaSyAPlV009oGel-WxDKv2rAOMCtsWOoZmsvo」
-・HomeScreenActivityファイルのDrawRoute()の「代入はここ」にAPIキ
-
-ーを代入
+・HomeScreenActivityファイルのDrawRoute()の「代入はここ」にAPIキーを代入
 「AIzaSyBXVO3tIpmXySd5PxV71uPF-IadDEYPrBM」
 4: プロジェクトをビルド
 5: エミュレーターまたは実機で実行
