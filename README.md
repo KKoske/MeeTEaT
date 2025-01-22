@@ -87,7 +87,7 @@ git clone https://github.com/your-username/meeteat.git
 
 ### 「SQLiteデータベースの操作」
 
-目的:店舗や商品のデータを管理・取得。
+目的: 店舗や商品のデータを管理・取得。
 
 主なポイント: SQLiteを使用して飲食店と商品データを保存。 ・データ取得用のメソッドなどを実装。
 
@@ -96,7 +96,7 @@ git clone https://github.com/your-username/meeteat.git
 
 ### 「MapAPIの表示」
 
-目的:現在地と設定地点のルートを表示させる。
+目的: 現在地と設定地点のルートを表示させる。
 
 主なポイント: Google Maps Platform のMaps SDK for Androidでマップの表示。 ・Directions APIで取得した現在地と設定地点のルート情報をマップに表示。
 
