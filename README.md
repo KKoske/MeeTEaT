@@ -126,6 +126,19 @@ git clone https://github.com/your-username/meeteat.git
 
 - 効果
 
+<dev>
+ 
+### 3.ルート上店舗だけ、グリッドを3x3にし、店舗表示を多く見えるよう設計
+
+　　　←右が上から順に大きくなる（今）　　左が全て同じの場合→
+
+   <p>
+  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/3x3.gif" width="200">
+  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/1x3.gif" width="200">
+</p>
+
+- 効果
+
 
 
 
