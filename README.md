@@ -99,9 +99,8 @@ git clone https://github.com/your-username/meeteat.git
 
 主なポイント: Google Maps Platform のMaps SDK for Androidでマップの表示。 ・Directions APIで取得した現在地と設定地点のルート情報をマップに表示。
 
-<br><br>
 
-### UI/UXの工夫と効果
+# UI/UXの工夫と効果
 
 
 
