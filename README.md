@@ -105,7 +105,7 @@ git clone https://github.com/your-username/meeteat.git
 ### 1.　横3店舗分の画像が表示されるように設計
 
 <p>
-  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/2.gif" width="200">
+  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/2.gif" width="200"style="margin-right: 10;>
   <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/3.gif" width="200">
 </p>
 
