@@ -107,7 +107,7 @@ git clone https://github.com/your-username/meeteat.git
 　　　←右が3画像(今)　　左が2.5画像の場合→
 
 <p>
-  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/3.gif" width="200">
+  <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/8302db2992061427ed0b5de57e7f2b58d88787d5/3.gif" width="200">
   <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/2.gif" width="200">
 </p>
 
