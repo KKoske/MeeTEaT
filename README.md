@@ -92,15 +92,18 @@ git clone https://github.com/your-username/meeteat.git
 主なポイント: SQLiteを使用して飲食店と商品データを保存。 ・データ取得用のメソッドなどを実装。
 
 工夫: 店舗一覧では静的な店舗画像データの取得・表示だったのに対して、商品一覧画面では店舗idと紐づいた動的な商品画像の取得・表示を実装した。
-<br>
-### UI/UXの工夫と効果
-
 
 ### 「MapAPIの表示」
 
 目的: 現在地と設定地点のルートを表示させる。
 
 主なポイント: Google Maps Platform のMaps SDK for Androidでマップの表示。 ・Directions APIで取得した現在地と設定地点のルート情報をマップに表示。
+
+<br><br>
+
+### UI/UXの工夫と効果
+
+
 
 ## デモ版操作の注意点 
 
