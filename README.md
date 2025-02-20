@@ -43,7 +43,7 @@
 - 言語:Kotlin
 - データベース: SQLite
 - プラットフォーム: Android
-- デザイン: XML
+- UI: XML
 - バージョン管理: GitHub
 - API: Maps SDK for Android, Directions API
 ## セットアップ手順
