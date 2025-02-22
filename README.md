@@ -161,6 +161,9 @@ git clone https://github.com/your-username/meeteat.git
 - **運用・保守性の強化**  
   - クラス・メソッドの責務を明確化し、拡張しやすいコード構造を維持。  
   - スレッド管理・非同期処理を考慮し、効率的な API 設計を実現。
+  - RESTful API の設計・実装
+
+ 
 
 
 
