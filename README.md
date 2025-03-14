@@ -52,12 +52,8 @@ MeeTEaTでは、以下の流れでテイクアウト予約が可能です。
 - UI: XML（今後Jetpack Composeへ移行予定）  
 - データベース: SQLite（今後Firestore/PostgreSQLへ移行予定）  
 - API: Google Maps API, Directions API  
-- バージョン管理: GitHub  
-## セットアップの注意点
-
- エミュレーターまたは実機で実行する際
-
- - 推奨設定:APIレベル33(Android 13.0"Tiramisu"| arm64)
+- バージョン管理: GitHub
+- 推奨設定:APIレベル33(Android 13.0"Tiramisu"| arm64)
 
 
 
