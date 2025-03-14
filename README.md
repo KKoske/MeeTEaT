@@ -48,31 +48,17 @@ MeeTEaTでは、以下の流れでテイクアウト予約が可能です。
 - ユーザーフレンドリーなUI/UX設計
 - アプリの流れを簡易的に体験できる画面遷移
 - 現在地と設定地点のルートを表示するMAP機能
-## 使用技術:
-- 言語:Kotlin
-- データベース: SQLite
-- プラットフォーム: Android
-- UI: XML
-- バージョン管理: GitHub
-- API: Maps SDK for Android, Directions API
-## セットアップ手順
+## 使用技術
+- 言語: Kotlin  
+- UI: XML（今後Jetpack Composeへ移行予定）  
+- データベース: SQLite（今後Firestore/PostgreSQLへ移行予定）  
+- API: Google Maps API, Directions API  
+- バージョン管理: GitHub  
+## セットアップの注意点
 
-1. リポジトリのクローン
-
-git clone https://github.com/your-username/meeteat.git
-
-2. AndroidStudioでプロジェクトを開く
-
-3. APIキーの代入について(セキュリティとして、意図的にAPIキーをソースコードから消し ています。必要であれば伝えて頂ければと思います。)
-
-4. プロジェクトをビルド
-
-5. エミュレーターまたは実機で実行
+ エミュレーターまたは実機で実行する際
 
  - 推奨設定:APIレベル33(Android 13.0"Tiramisu"| arm64)
-
- - 実機の場合はUSBデバッグを有効にしてください。
-
 
 ## 主な実装
 
