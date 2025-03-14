@@ -76,7 +76,7 @@ MeeTEaTでは、以下の流れでテイクアウト予約が可能です。
  
 ### 2.グリッドの画像はみ出し設計: 重要な情報を目立たせるデザイン  
 
-　　　←左：右端のはみ出しが、上から下へ順に大きくなる（今）　　右：全て同じの場合→
+　　　←左：右端のはみ出しが、上から下へ順に大きくなる（今）右：全て同じの場合→
 
    <p>
   <img src="https://raw.githubusercontent.com/KKoske/MeeTEaT/7d9ed4318bed95ebfa48c2149bc50ef0deb81667/Before.gif" width="200">
